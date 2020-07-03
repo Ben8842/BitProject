@@ -1,4 +1,4 @@
-
+//This uses the global api call to receive general global information for header
 $.getJSON("https://coinlib.io/api/v1/global?key=56a2275998bf3767", function(stuff){
     console.log(stuff);
 
@@ -12,7 +12,7 @@ $.getJSON("https://coinlib.io/api/v1/global?key=56a2275998bf3767", function(stuf
 });
 
 
-
+//This function uses the coinlist api call to create the top ten list
 function myFunction() {
 
    $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(ranklist){
@@ -69,6 +69,7 @@ function myFunction() {
    });
 }
 
+//This function creates a doughnut chart based on the coinlist api top ten information
 function myVis() {
 
     $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(ranklist){
@@ -126,6 +127,7 @@ function myVis() {
 });
 }
 
+//This function uses the coin api call to get some information on a single coin
 function myBit() {
     $.getJSON("https://coinlib.io/api/v1/coin?key=56a2275998bf3767&page=1&symbol=BCH", function(coininfo){
         console.log(coininfo);
@@ -142,4 +144,34 @@ function myBit() {
         
     });
 
+}
+
+//This function is supposed to take input from the build page and create portfolio
+function myBuildFunction() {
+    var amount = "";
+    var amount = document.getElementById("field1").value
+    console.log(amount);
+    console.log("hello?");
+    $('.testing').append(amount + " Bitcoins in your portfolio!");
+
+    $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(portlist){
+        console.log(portlist);
+
+        var first = portlist.coins[0].price;
+        var second = portlist.coins[1].price;
+        var third = portlist.coins[2].price;
+        var fourth = portlist.coins[3].price;
+        var fifth = portlist.coins[4].price;
+        var sixth = portlist.coins[5].price;
+        var seventh = portlist.coins[6].price;
+        var eighth = portlist.coins[7].price;
+        var ninth = portlist.coins[8].price;
+        var tenth = portlist.coins[9].price;
+
+        var firstV = ((Math.floor(first * 100)) / 100) * amount;
+        console.log(firstV);
+        $('.testingagain').append("Total Portfolio value = $" + firstV.toLocaleString());
+
+
+    });
 }
