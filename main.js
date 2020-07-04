@@ -1,6 +1,6 @@
 //This uses the global api call to receive general global information for header
 $.getJSON("https://coinlib.io/api/v1/global?key=56a2275998bf3767", function(stuff){
-    console.log(stuff);
+    //console.log(stuff);
 
     var numberofcoins = stuff.coins;
     var tmcap = Math.floor(stuff.total_market_cap);
@@ -148,12 +148,32 @@ function myBit() {
 
 //This function is supposed to take input from the build page and create portfolio
 function myBuildFunction() {
-    var amount = "";
-    var amount = document.getElementById("field1").value
-    console.log(amount);
-    console.log("hello?");
-    $('.testing').append(amount + " Bitcoins in your portfolio!");
 
+    //here we are grabbing each input (10 of them)
+    var amount1 = "";
+    var amount1 = document.getElementById("field1").value
+    var amount2 = "";
+    var amount2 = document.getElementById("field2").value
+    var amount3 = "";
+    var amount3 = document.getElementById("field3").value
+    var amount4 = "";
+    var amount4 = document.getElementById("field4").value
+    var amount5 = "";
+    var amount5 = document.getElementById("field5").value
+    var amount6 = "";
+    var amount6 = document.getElementById("field6").value
+    var amount7 = "";
+    var amount7 = document.getElementById("field7").value
+    var amount8 = "";
+    var amount8 = document.getElementById("field8").value
+    var amount9 = "";
+    var amount9 = document.getElementById("field9").value
+    var amount10 = "";
+    var amount10 = document.getElementById("field10").value
+    
+    
+   
+//Here is the (coinlist) api call to get the price of each coin
     $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(portlist){
         console.log(portlist);
 
@@ -168,10 +188,57 @@ function myBuildFunction() {
         var ninth = portlist.coins[8].price;
         var tenth = portlist.coins[9].price;
 
-        var firstV = ((Math.floor(first * 100)) / 100) * amount;
-        console.log(firstV);
-        $('.testingagain').append("Total Portfolio value = $" + firstV.toLocaleString());
+        //Here we are multiplying the input number times the current price of the coin
+        var v1 = Math.floor(first * amount1 * 100) / 100;
+        var v2 = Math.floor(second * amount2 * 100) / 100;
+        var v3 = Math.floor(third * amount3 * 100) / 100;
+        var v4 = Math.floor(fourth * amount4 * 100) / 100;
+        var v5 = Math.floor(fifth * amount5 * 100) / 100;
+        var v6 = Math.floor(sixth * amount6 * 100) / 100;
+        var v7 = Math.floor(seventh * amount7 * 100) / 100;
+        var v8 = Math.floor(eighth * amount8 * 100) / 100;
+        var v9 = Math.floor(ninth * amount9 * 100) / 100;
+        var v10 = Math.floor(tenth * amount10 * 100) / 100;
+
+        //Here we are adding each of the inputs*current price values to get a total
+        var totalC = v1 + v2 + v3 + v4 + v5 + v6 + v7 + v8 + v9 + v10;
+
+        
+        $('.calculation').append("Total Portfolio value = $" + totalC.toLocaleString());
+
+        //Here is where we are building the chart
+        var ctx = document.getElementById('buildChart').getContext('2d');
+        var chart = new Chart(ctx, {
+         // The type of chart we want to create
+         type: 'doughnut',
+     
+         // The data for our dataset
+         data: {
+             labels: ["Bitcoin", "Ethereum", "XRP", "Tether", "Bitcoin Cash", "Bitcoin SV", "Litecoin", "Cardano", "Binance Coin", "EOS"],
+             datasets: [{
+                 label: 'Value',
+                 backgroundColor: ['rgb(255, 106, 0)', 'rgb(253, 250, 54)',
+                 'rgb(40, 165, 230)',    
+                 'rgb(40, 250, 54)',
+                 'rgb(189, 165, 150)',
+                 'rgb(23, 250, 244)',
+                 'rgb(248, 2, 12)',
+                 'rgb(229, 132, 201)',
+                 'rgb(23, 130, 12)',
+                 'rgb(17, 132, 201)'],
+                 borderColor: 'rgb(25, 99, 132)',
+                 data: [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10]
+             }]
+         },
+     
+         // Configuration options go here
+         options: {}
+        });
 
 
     });
+
+    //$('.result').append(amount1 + " Bitcoins in your portfolio!");
+
+
 }
