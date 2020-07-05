@@ -2,18 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Build Portfolio</title>
     
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-      <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-    ></script>
-    <script src="../main.js"></script>
-    <link rel="stylesheet" href="../css/build.css">
-</head>
+        <!-- this links to chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <!-- this links to jquery-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!-- this links to js file-->
+        <script src="../main.js"></script>
+        <!-- this links to css file-->
+        <link rel="stylesheet" href="../css/styles.css">
+        <!-- this is to link to bootstap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  </head>
+
 <body>
-    Build Your Portfolio  
+    <h1>  Build Your Portfolio  </h1>
+
+
+
     <canvas id= "buildChart"></canvas>
     <div class="results-container">
  
@@ -23,8 +32,9 @@
     
     </div>
     <hr>
-    <button onclick="myBuildFunction()">SUBMIT to build your portfolio!</button>
+    <button type="button" class="btn btn-success" onclick="myBuildFunction()">SUBMIT to build your portfolio!</button>
     <hr>
+    <!---
     How many Bitcoin are in your portfolio? <input type="text" id="field1" value="0"><br>
     How many Ethereum are in your portfolio?<input type="text" id="field2" value="0"><br>
     How many XRP are in your portfolio?<input type="text" id="field3" value="0"><br>
@@ -35,8 +45,67 @@
     How many Cardano are in your portfolio?<input type="text" id="field8" value="0"><br>
     How many Binance Coin are in your portfolio?<input type="text" id="field9" value="0"><br>
     How many EOS are in your portfolio?<input type="text" id="field10" value="0"><br>
-    
+    -->
+    <h3>Please enter the number of coins you would like in your portfolio in the fields below:</h3>
+    <hr>
+    <div class="form-group row">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Bitcoin</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field1" value="0">
+      </div>
+
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ethereum</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field2" value="0">
+      </div>
+
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">XRP</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field3" value="0">
+      </div>
+
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Tether</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field4" value="0">
+      </div>
+
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Bitcoin Cash</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field5" value="0">
+      </div>
+
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Bitcoin SV</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field6" value="0">
+      </div>
+
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Litecoin</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field7" value="0">
+      </div>
+
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Cardano</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field8" value="0">
+      </div>
+
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Binance Coin</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field9" value="0">
+      </div>
+
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">EOS</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg" id="field10" value="0">
+      </div>
+    </div>
 <hr>
+
+
+<!--This links to popper and bootstrap and jquery-->
+<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 
 </body>

@@ -6,8 +6,8 @@ $.getJSON("https://coinlib.io/api/v1/global?key=56a2275998bf3767", function(stuf
     var tmcap = Math.floor(stuff.total_market_cap);
     var tv_24 = Math.floor(stuff.total_volume_24h);
 
-    $('.tmc').append("The total market cap of all currencies is currently: $" + tmcap.toLocaleString());
-    $('.tv_24').append("The current 24 hour volume of the market is: $" + tv_24.toLocaleString());
+    $('.tmc').append("$" + tmcap.toLocaleString() + "  is the current value of the entire digital currency market.  The current 24 hour volume of the market is: $" + tv_24.toLocaleString());
+    //$('.tv_24').append("The current 24 hour volume of the market is: $" + tv_24.toLocaleString());
 
 });
 
@@ -146,7 +146,7 @@ function myBit() {
 
 }
 
-//This function is supposed to take input from the build page and create portfolio
+//This function takes input from the build page and creates portfolio
 function myBuildFunction() {
 
     //here we are grabbing each input (10 of them)

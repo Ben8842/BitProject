@@ -1,5 +1,7 @@
 For educational puposes I am looking to use the coinlib.io api to display things in interesting ways.  
 
+This project also uses the chart.js to help generate charts.  
+
 API KEY IS 56a2275998bf3767
 
 
