@@ -8,7 +8,6 @@ $.getJSON("https://coinlib.io/api/v1/global?key=56a2275998bf3767", function(stuf
 
     $('.tmc').append("$" + tmcap.toLocaleString() + "  is the current value of the entire digital currency market.  The current 24 hour volume of the market is: $" + tv_24.toLocaleString());
     //$('.tv_24').append("The current 24 hour volume of the market is: $" + tv_24.toLocaleString());
-
 });
 
 
