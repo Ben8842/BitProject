@@ -1,6 +1,7 @@
 For educational puposes I am looking to use the coinlib.io api to display things in interesting ways.  
 
 This project also uses the chart.js to help generate charts.  
+This project also uses https://min-api.cryptocompare.com/ for pulling the latest news information
 
 API KEY IS 56a2275998bf3767
 

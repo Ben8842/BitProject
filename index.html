@@ -20,7 +20,7 @@
 <body>
 
 
-  
+
 <hr>
     <div class= "title-container">
         <h5>Explore the market</h3>
@@ -43,23 +43,24 @@
 <!--<button type="button" class="btn btn-success" button onclick="location.href = 'html/build.html';">Build Portfolio</button>--> 
 <div class="container">
   <div class="row">
-    <div class="col-md-auto">
 
+<!--First card here-->
+    <div class="col-md-auto">
     
 <div class="card" style="width: 18rem;">
-  <img src="BUILD.png" class="card-img-top" alt="...">
+  <img src="imagePNG/BUILD.png" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Build Portfolio Tool</h5>
     <p class="card-text">This tool gives you an opportunity to build your portfolio and analyze your current allocation based on current prices.</p>
     <a href="html/build.html" class="btn btn-primary stretched-link">Build Portfolio Now</a>
   </div>
 </div>
-
     </div>
+<!--second card here-->
     <div class="col-md-auto">
 
 <div class="card" style="width: 18rem;">
-  <img src="TopTen.png" class="card-img-top" alt="...">
+  <img src="imagePNG/TopTen.png" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Top Ten</h5>
     <p class="card-text">View a list of the current top ten currencies and learn more about the market</p>
@@ -68,29 +69,44 @@
 </div>
 
      </div>
-
+<!--third card here-->
      <div class="col-md-auto">
 
       <div class="card" style="width: 18rem;">
-        <img src="MarketView.png" class="card-img-top" alt="...">
+        <img src="imagePNG/MarketView.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Market at a glance</h5>
           <p class="card-text">This tool allows you to chart the top ten coins in the market</p>
-          <a href="html/market.html" class="btn btn-primary stretched-link">View Market Now</a>
+          <a href="html/TopTen.html" class="btn btn-primary stretched-link">View Market Now</a>
         </div>
       </div>
       
            </div>
 
+           <!--fourth card here-->
+           <div class="col-md-auto">
+
+            <div class="card" style="width: 18rem;">
+              <img src="imagePNG/News.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Market News</h5>
+                <p class="card-text">This is the place to find the latest news in the market.</p>
+                <a href="html/News.html" class="btn btn-primary stretched-link">Latest Market News</a>
+              </div>
+            </div>
+            
+                 </div>
+
 
     </div>
   </div>
 
+<!-- Temporarily hiding these buttons
 <button type="button" class="btn btn-success" button onclick="myFunction()">Top Ten</button>
 <button type="button" class="btn btn-success" button onclick="myFunction()">Hottest Coins</button>
 <button type="button" class="btn btn-success" onclick="myBit()">Coldest Coins</button>
 <button type="button" class="btn btn-success" onclick="myVis()">Market Visualization</button>
-
+-->
 <hr>   
        <div class="row">
         <div class="column" >
@@ -143,6 +159,9 @@
 </body>
 
 <footer>
+  <hr>
+  News API from:
+  <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
   <hr>
   Chart API from:
  <a href="https://chart.js">chart.js</a>
