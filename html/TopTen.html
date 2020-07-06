@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Build Portfolio</title>
+    <title>Top Ten</title>
     
         <!-- this links to chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
@@ -19,11 +19,512 @@
 
 
   </head>
+<!-- This is one way to display top ten
+    <body onload="myFunction()">
+        <h3>Top Ten</h3>
 
-    <body onload="myVis()">
-        <h3>Market View</h3>
 
-       <canvas id= "myChart"></canvas>
+        <div class="row">
+          <div class="column" >
+            <h2 class="CTitleOne"></h2>
+           
+            <p class= "first"></p>
+            <p class= "second"></p>
+            <p class= "third"></p>
+            <p class= "fourth"></p>
+            <p class= "fifth"></p>
+            <p class= "sixth"></p>
+            <p class= "seventh"></p>
+            <p class= "eighth"></p>
+            <p class= "ninth"></p>
+            <p class= "tenth"></p>
+  
+          </div>
+          <div class="column" >
+            <h2 class="CTitleTwo"></h2>
+            <p class= "firstM"></p>
+            <p class= "secondM"></p>
+            <p class= "thirdM"></p>
+            <p class= "fourthM"></p>
+            <p class= "fifthM"></p>
+            <p class= "sixthM"></p>
+            <p class= "seventhM"></p>
+            <p class= "eighthM"></p>
+            <p class= "ninthM"></p>
+            <p class= "tenthM"></p>
+          </div>
+        </div>
+      </div>
+    -->
+    <body onload="tenFunction()">
+      <h1>
+      The Top Ten Coins of the market
+      </h1>
+      <h6>
+<!--This button is probably not needed
+      <hr>
+
+
+      <button type="button" class="btn btn-success" button onclick="tenFunction()">Top Ten</button>
+
+      <hr>
+    -->
+
+      <!--Table Example-
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+          </td>
+            <td>
+              <button type="button" class="btn btn-success" button onclick="tenFunction()">Top Ten</button>
+            </td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    -->
+
+    <!--This creates a table with an accordian inside-->
+    <div class="table-responsive">
+      <table class="table">
+        <!--Here is the Header-->
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Coin</th>
+            <th scope="col">Price</th>
+            <th scope="col">Market Cap</th>
+          </tr>
+        </thead>
+        <!--This is where the body of accordions begins-->
+        <tbody>
+          <!--This tr tag is the first accordian(ac)-->
+          <tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+    <td class="expand-button"></td>
+    <td id="coin1">Cell</td>
+    <td id="price1">Cell</td>
+    <td id="mc1">Cell</td>
+    
+    </tr>
+          <!--This tr tag has the collapsed information section(co)-->
+    <tr class="hide-table-padding">
+    <td></td>
+    <td colspan="3">
+    <div id="collapseOne" class="collapse in p-3">
+      <div class="row">
+        <div class="col-2">label</div>
+        <div class="col-6">value 1</div>
+      </div>
+      <div class="row">
+        <div class="col-2">label</div>
+        <div class="col-6">value 2</div>
+      </div>
+      <div class="row">
+        <div class="col-2">label</div>
+        <div class="col-6">value 3</div>
+      </div>
+      <div class="row">
+        <div class="col-2">label</div>
+        <div class="col-6">value 4</div>
+      </div>
+    </div></td>
+    </tr>
+    <!--This tr tag is the second accordian(ac)-->
+          <tr class="accordion-toggle collapsed" id="accordion2" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+    <td class="expand-button"></td>
+    <td id="coin2">cell</td>
+    <td id="price2">cell</td>
+    <td id="mc2">cell</td>
+    
+    </tr>
+    <!--This tr tag has the second collapsed information section(co)-->
+    <tr class="hide-table-padding">
+    <td></td>
+    <td colspan="4">
+    <div id="collapseTwo" class="collapse in p-3">
+      <div class="row">
+        <div class="col-2">label</div>
+        <div class="col-6">value</div>
+      </div>
+      <div class="row">
+        <div class="col-2">label</div>
+        <div class="col-6">value</div>
+      </div>
+      <div class="row">
+        <div class="col-2">label</div>
+        <div class="col-6">value</div>
+      </div>
+      <div class="row">
+        <div class="col-2">label</div>
+        <div class="col-6">value</div>
+      </div>
+    </div></td>
+    </tr>
+<!--third ac-->
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+  <td class="expand-button"></td>
+  <td id="coin3">Cell</td>
+  <td id="price3">Cell</td>
+  <td id="mc3">Cell</td>
+  
+  </tr>
+<!--third co-->
+<tr class="hide-table-padding">
+  <td></td>
+  <td colspan="3">
+  <div id="collapseOne" class="collapse in p-3">
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 2</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 3</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 4</div>
+    </div>
+  </div></td>
+  </tr>
+<!--fourth ac-->
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+  <td class="expand-button"></td>
+  <td id="coin4">Cell</td>
+  <td id="price4">Cell</td>
+  <td id="mc4">Cell</td>
+  
+  </tr>
+<!--fourth co-->
+<tr class="hide-table-padding">
+  <td></td>
+  <td colspan="3">
+  <div id="collapseOne" class="collapse in p-3">
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 2</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 3</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 4</div>
+    </div>
+  </div></td>
+  </tr>
+<!--fifth ac-->
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+  <td class="expand-button"></td>
+  <td id="coin5">Cell</td>
+  <td id="price5">Cell</td>
+  <td id="mc5">Cell</td>
+  
+  </tr>
+<!--fifth co-->
+<tr class="hide-table-padding">
+  <td></td>
+  <td colspan="3">
+  <div id="collapseOne" class="collapse in p-3">
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 2</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 3</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 4</div>
+    </div>
+  </div></td>
+  </tr>
+<!--sixth ac-->
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+  <td class="expand-button"></td>
+  <td id="coin6">Cell</td>
+  <td id="price6">Cell</td>
+  <td id="mc6">Cell</td>
+  
+  </tr>
+<!--sixth co-->
+<tr class="hide-table-padding">
+  <td></td>
+  <td colspan="3">
+  <div id="collapseOne" class="collapse in p-3">
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 2</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 3</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 4</div>
+    </div>
+  </div></td>
+  </tr>
+<!--seventh ac-->
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+  <td class="expand-button"></td>
+  <td id="coin7">Cell</td>
+  <td id="price7">Cell</td>
+  <td id="mc7">Cell</td>
+  
+  </tr>
+<!--seventh co-->
+<tr class="hide-table-padding">
+  <td></td>
+  <td colspan="3">
+  <div id="collapseOne" class="collapse in p-3">
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 2</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 3</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 4</div>
+    </div>
+  </div></td>
+  </tr>
+<!--eighth ac-->
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+  <td class="expand-button"></td>
+  <td id="coin8">Cell</td>
+  <td id="price8">Cell</td>
+  <td id="mc8">Cell</td>
+  
+  </tr>
+<!--eighth co-->
+<tr class="hide-table-padding">
+  <td></td>
+  <td colspan="3">
+  <div id="collapseOne" class="collapse in p-3">
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 2</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 3</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 4</div>
+    </div>
+  </div></td>
+  </tr>
+<!--ninth ac-->
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+  <td class="expand-button"></td>
+  <td id="coin9">Cell</td>
+  <td id="price9">Cell</td>
+  <td id="mc9">Cell</td>
+  
+  </tr>
+<!--ninth co-->
+<tr class="hide-table-padding">
+  <td></td>
+  <td colspan="3">
+  <div id="collapseOne" class="collapse in p-3">
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 2</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 3</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 4</div>
+    </div>
+  </div></td>
+  </tr>
+<!--tenth ac-->
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+  <td class="expand-button"></td>
+  <td id="coin10">Cell</td>
+  <td id="price10">Cell</td>
+  <td id="mc10">Cell</td>
+  
+  </tr>
+<!--tenth co-->
+<tr class="hide-table-padding">
+  <td></td>
+  <td colspan="3">
+  <div id="collapseOne" class="collapse in p-3">
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 2</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 3</div>
+    </div>
+    <div class="row">
+      <div class="col-2">label</div>
+      <div class="col-6">value 4</div>
+    </div>
+  </div></td>
+  </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+</h6>
+
+
+
+<!--This is an accordion testing
+<hr>
+
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="1">
+                
+              </button>
+            </h2>
+          </div>
+      
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="2">
+                
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="3">
+                
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="4">
+                
+              </button>
+            </h2>
+          </div>
+      
+          <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingFive">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne" id="5">
+                
+              </button>
+            </h2>
+          </div>
+      
+          <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    -->
 
 
 
@@ -34,6 +535,9 @@
     </body>
     
     <footer>
+      <hr>
+      News API from:
+      <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
       <hr>
       Chart API from:
      <a href="https://chart.js">chart.js</a>

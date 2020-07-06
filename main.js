@@ -279,3 +279,30 @@ function myNews() {
     $('.body3').append(body3);
 });  
 }
+
+function tenFunction() {
+    $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(tenlist){
+      console.log(tenlist);
+      var x = 0;
+      var y = 1;
+      //this while loop creates the proper id with x and y variables and grabs the proper values from array 
+      //and pushes the info to the accordian
+     while( x < 10) {
+         //these variables hold the proper id to correspond with the html accordian id values
+         var coinid = "coin" + y;
+         var priceid = "price" + y;
+         var mcid = "mc" + y;
+         //this variable holds the value and limits it to two decimal places
+         var pricedectwo = Math.floor(tenlist.coins[x].price * 100) / 100;
+         var mcdectwo = Math.floor(tenlist.coins[x].market_cap * 100) / 100;
+
+        // console.log(coinid, priceid, mcid);
+        //This pushes the coin name, current price and current market cap to the accordian
+         document.getElementById(coinid).innerHTML = y + ".   " + tenlist.coins[x].name;
+         document.getElementById(priceid).innerHTML = "$" + pricedectwo.toLocaleString();
+         document.getElementById(mcid).innerHTML = "$" + mcdectwo.toLocaleString();
+          x++; 
+          y++;
+    }
+    });
+}
