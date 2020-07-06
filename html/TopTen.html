@@ -61,7 +61,10 @@
       The Top Ten Coins of the market
       </h1>
       <h6>
-<!--This button is probably not needed
+        <!--
+        <button type="button" class="btn btn-success" button onclick="detailsFunction()">Load Details</button>-->
+
+        <!--This button is probably not needed
       <hr>
 
 
@@ -135,20 +138,20 @@
     <td colspan="3">
     <div id="collapseOne" class="collapse in p-3">
       <div class="row">
-        <div class="col-2">label</div>
-        <div class="col-6">value 1</div>
+        <div class="col-2" >24 hour change</div>
+        <div class="col-6" id="cpd">value 1</div>
       </div>
       <div class="row">
-        <div class="col-2">label</div>
-        <div class="col-6">value 2</div>
+        <div class="col-2">1 hour change</div>
+        <div class="col-6" id = "cph">value 2</div>
       </div>
       <div class="row">
-        <div class="col-2">label</div>
-        <div class="col-6">value 3</div>
+        <div class="col-2">High</div>
+        <div class="col-6" id="hday">value 3</div>
       </div>
       <div class="row">
-        <div class="col-2">label</div>
-        <div class="col-6">value 4</div>
+        <div class="col-2">Low</div>
+        <div class="col-6" id="lday">value 4</div>
       </div>
     </div></td>
     </tr>
@@ -184,7 +187,7 @@
     </div></td>
     </tr>
 <!--third ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">
   <td class="expand-button"></td>
   <td id="coin3">Cell</td>
   <td id="price3">Cell</td>
@@ -195,7 +198,7 @@
 <tr class="hide-table-padding">
   <td></td>
   <td colspan="3">
-  <div id="collapseOne" class="collapse in p-3">
+  <div id="collapseThree" class="collapse in p-3">
     <div class="row">
       <div class="col-2">label</div>
       <div class="col-6">value 1</div>
@@ -215,7 +218,7 @@
   </div></td>
   </tr>
 <!--fourth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">
   <td class="expand-button"></td>
   <td id="coin4">Cell</td>
   <td id="price4">Cell</td>
@@ -226,7 +229,7 @@
 <tr class="hide-table-padding">
   <td></td>
   <td colspan="3">
-  <div id="collapseOne" class="collapse in p-3">
+  <div id="collapseFour" class="collapse in p-3">
     <div class="row">
       <div class="col-2">label</div>
       <div class="col-6">value 1</div>
@@ -246,7 +249,7 @@
   </div></td>
   </tr>
 <!--fifth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">
   <td class="expand-button"></td>
   <td id="coin5">Cell</td>
   <td id="price5">Cell</td>
@@ -257,7 +260,7 @@
 <tr class="hide-table-padding">
   <td></td>
   <td colspan="3">
-  <div id="collapseOne" class="collapse in p-3">
+  <div id="collapseFive" class="collapse in p-3">
     <div class="row">
       <div class="col-2">label</div>
       <div class="col-6">value 1</div>
@@ -277,7 +280,7 @@
   </div></td>
   </tr>
 <!--sixth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseSix">
   <td class="expand-button"></td>
   <td id="coin6">Cell</td>
   <td id="price6">Cell</td>
@@ -288,7 +291,7 @@
 <tr class="hide-table-padding">
   <td></td>
   <td colspan="3">
-  <div id="collapseOne" class="collapse in p-3">
+  <div id="collapseSix" class="collapse in p-3">
     <div class="row">
       <div class="col-2">label</div>
       <div class="col-6">value 1</div>
@@ -308,7 +311,7 @@
   </div></td>
   </tr>
 <!--seventh ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseSeven">
   <td class="expand-button"></td>
   <td id="coin7">Cell</td>
   <td id="price7">Cell</td>
@@ -319,7 +322,7 @@
 <tr class="hide-table-padding">
   <td></td>
   <td colspan="3">
-  <div id="collapseOne" class="collapse in p-3">
+  <div id="collapseSeven" class="collapse in p-3">
     <div class="row">
       <div class="col-2">label</div>
       <div class="col-6">value 1</div>
@@ -339,7 +342,7 @@
   </div></td>
   </tr>
 <!--eighth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseEight">
   <td class="expand-button"></td>
   <td id="coin8">Cell</td>
   <td id="price8">Cell</td>
@@ -350,7 +353,7 @@
 <tr class="hide-table-padding">
   <td></td>
   <td colspan="3">
-  <div id="collapseOne" class="collapse in p-3">
+  <div id="collapseEight" class="collapse in p-3">
     <div class="row">
       <div class="col-2">label</div>
       <div class="col-6">value 1</div>
@@ -370,7 +373,7 @@
   </div></td>
   </tr>
 <!--ninth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseNine">
   <td class="expand-button"></td>
   <td id="coin9">Cell</td>
   <td id="price9">Cell</td>
@@ -381,7 +384,7 @@
 <tr class="hide-table-padding">
   <td></td>
   <td colspan="3">
-  <div id="collapseOne" class="collapse in p-3">
+  <div id="collapseNine" class="collapse in p-3">
     <div class="row">
       <div class="col-2">label</div>
       <div class="col-6">value 1</div>
@@ -401,7 +404,7 @@
   </div></td>
   </tr>
 <!--tenth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseTen">
   <td class="expand-button"></td>
   <td id="coin10">Cell</td>
   <td id="price10">Cell</td>
@@ -412,7 +415,7 @@
 <tr class="hide-table-padding">
   <td></td>
   <td colspan="3">
-  <div id="collapseOne" class="collapse in p-3">
+  <div id="collapseTen" class="collapse in p-3">
     <div class="row">
       <div class="col-2">label</div>
       <div class="col-6">value 1</div>

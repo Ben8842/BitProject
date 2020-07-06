@@ -280,13 +280,18 @@ function myNews() {
 });  
 }
 
+//declaring global variable
+var superinfo;
+
 function tenFunction() {
     $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(tenlist){
       console.log(tenlist);
       var x = 0;
       var y = 1;
+      superinfo = tenlist.coins[0].symbol + "," + tenlist.coins[1].symbol + "," + tenlist.coins[2].symbol + "," + tenlist.coins[3].symbol + "," + tenlist.coins[4].symbol + "," + tenlist.coins[5].symbol + "," + tenlist.coins[6].symbol + "," + tenlist.coins[7].symbol + "," + tenlist.coins[8].symbol + "," + tenlist.coins[9].symbol;
+      console.log(superinfo + "tenFunction");
       //this while loop creates the proper id with x and y variables and grabs the proper values from array 
-      //and pushes the info to the accordian
+      //and pushes the info to the accordiangit
      while( x < 10) {
          //these variables hold the proper id to correspond with the html accordian id values
          var coinid = "coin" + y;
@@ -304,5 +309,28 @@ function tenFunction() {
           x++; 
           y++;
     }
+    });
+}
+
+function detailsFunction(){
+    console.log(superinfo);
+    $.getJSON("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + superinfo + "&tsyms=USD", function(detailinfo){
+        console.log(detailinfo);
+        var x = 0;
+        var y = 1;
+        while( x < 1) {
+            var imgid = "imgid" + y;
+            var cpd = "cpd" + y;
+            var cph = "cph" + y;
+            var hday = "hday" + y;
+            var lday = "lday" + y;
+
+           // document.getElementById(imgid).innerHRML = detailinfo.DISPLAY.
+
+            x++;
+            y++;
+        }
+
+
     });
 }
