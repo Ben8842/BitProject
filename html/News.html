@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Build Portfolio</title>
+    <title>Latest News!</title>
     
         <!-- this links to chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
@@ -16,32 +16,130 @@
         <!-- this is to link to bootstap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       
-
+        <style>
+            .img-container {
+                text-align: center;
+            }
+        </style>
 
   </head>
 
   <body onload="myNews()">
-        <h3>Latest News</h3>
-        <div class="news-container1">
-            <img class="icon1">
-            <h3 class="newsTitle1"></h3>
-            <h4 class="newsURL1">Here is the URL: </h4>
-            <h6 class="body1"></h6>
-        </div>
 
-        <div class="news-container2">
-            <img class="icon2">
-            <h3 class="newsTitle2"></h3>
-            <h4 class="newsURL2">Here is the URL: </h4>
-            <h6 class="body2"></h6>
-        </div>
+    <h3 style="text-align:center">Latest News</h3>
 
-        <div class="news-container3">
-            <img class="icon3">
-            <h3 class="newsTitle3"></h3>
-            <h4 class="newsURL3">Here is the URL: </h4>
-            <h6 class="body3"></h6>
+            <!--FIRST NEWS ARTICLE-->
+       
+           
+       
+            <div class="img-container">
+                <img class="icon1">
+            </div>
+            
+         
+<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#news1">
+    <h3 class="newsTitle1"></h3>
+</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="news1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newsTitle1"></h5>
+          <h5 class = "newsTitle1"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body" id="body1">
+            <h6 class = "body1"></h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+            
+            <a href="" class="newsURL1" style="text-align:center"></a>
+
+            <!--SECOND NEWS ARTICLE-->
+
+          
+       
+            <div class="img-container">
+                <img class="icon2">
+            </div>
+            
+          
+<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#news2">
+    <h3 class="newsTitle1"></h3>
+</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="news2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newsTitle1"></h5>
+          <h5 class = "newsTitle2"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="body1">
+            <h6 class = "body2"></h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+            
+            <a href="" class="newsURL2"></a>
+
+            <!--THIRD NEWS ARTICLE-->
+
+        
+       
+            <div class="img-container">
+                <img class="icon3">
+            </div>
+            
+           
+<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#news3">
+    <h3 class="newsTitle1"></h3>
+</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="news3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newsTitle1"></h5>
+          <h5 class = "newsTitle3"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="body1">
+            <h6 class = "body3"></h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+            
+            <a href="" class="newsURL3"></a>
+
+        
 
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -258,6 +258,8 @@ function myNews() {
     $('.newsURL1').append(nurl1);
     $('.body1').append(body1);
 
+    
+
     var icon2= newsy.Data[1].imageurl;
     var title2= newsy.Data[1].title;
     var nurl2= newsy.Data[1].url;
@@ -277,12 +279,15 @@ function myNews() {
     $('.newsTitle3').append(title3);
     $('.newsURL3').append(nurl3);
     $('.body3').append(body3);
+
+    
 });  
 }
 
 //declaring global variable
 var superinfo;
 
+//This function populates the top ten list
 function tenFunction() {
     $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(tenlist){
       console.log(tenlist);
