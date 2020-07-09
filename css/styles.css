@@ -13,3 +13,8 @@
     display: table;
     clear: both;
   }
+
+  .calculation{
+    text-align: center;
+    font-size: 80;
+  }

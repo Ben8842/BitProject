@@ -169,10 +169,14 @@ function myBuildFunction() {
     var amount9 = document.getElementById("field9").value
     var amount10 = "";
     var amount10 = document.getElementById("field10").value
-    
+    //Here we are grabbing the drop down chart value
+    var chartType = document.getElementById("chartType");
+    var userChoice = chartType.options[chartType.selectedIndex].value;
+    console.log(chartType);
+    console.log(userChoice);
     
    
-//Here is the (coinlist) api call to get the price of each coin
+    //Here is the (coinlist) api call to get the price of each coin
     $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(portlist){
         console.log(portlist);
 
@@ -209,7 +213,7 @@ function myBuildFunction() {
         var ctx = document.getElementById('buildChart').getContext('2d');
         var chart = new Chart(ctx, {
          // The type of chart we want to create
-         type: 'doughnut',
+         type: userChoice,
      
          // The data for our dataset
          data: {
@@ -231,13 +235,16 @@ function myBuildFunction() {
          },
      
          // Configuration options go here
-         options: {}
+         options: {
+         }
         });
 
 
     });
 
     //$('.result').append(amount1 + " Bitcoins in your portfolio!");
+
+
 
 
 }
@@ -413,3 +420,89 @@ function coldDisplay() {
 
 });
 }
+
+//This function grabs the current slider value and displays it on the build portfolio page
+function displaySlideValue() {
+  var slider1 = document.getElementById("field1");
+  var output1 = document.getElementById("demo1");
+  output1.innerHTML = slider1.value;
+
+  slider1.oninput = function() {
+  output1.innerHTML = this.value;
+  }
+
+  var slider2 = document.getElementById("field2");
+  var output2 = document.getElementById("demo2");
+  output2.innerHTML = slider2.value;
+
+  slider2.oninput = function() {
+  output2.innerHTML = this.value;
+  }
+
+  var slider3 = document.getElementById("field3");
+  var output3 = document.getElementById("demo3");
+  output3.innerHTML = slider3.value;
+
+  slider3.oninput = function() {
+  output3.innerHTML = this.value;
+  }
+
+  var slider4 = document.getElementById("field4");
+  var output4 = document.getElementById("demo4");
+  output4.innerHTML = slider4.value;
+
+  slider4.oninput = function() {
+  output4.innerHTML = this.value;
+  }
+
+  var slider5 = document.getElementById("field5");
+  var output5 = document.getElementById("demo5");
+  output5.innerHTML = slider5.value;
+
+  slider5.oninput = function() {
+  output5.innerHTML = this.value;
+  }
+
+  var slider6 = document.getElementById("field6");
+  var output6 = document.getElementById("demo6");
+  output6.innerHTML = slider6.value;
+
+  slider6.oninput = function() {
+  output6.innerHTML = this.value;
+  }
+
+  var slider7 = document.getElementById("field7");
+  var output7 = document.getElementById("demo7");
+  output7.innerHTML = slider7.value;
+
+  slider7.oninput = function() {
+  output7.innerHTML = this.value;
+  }
+
+  var slider8 = document.getElementById("field8");
+  var output8 = document.getElementById("demo8");
+  output8.innerHTML = slider8.value;
+
+  slider8.oninput = function() {
+  output8.innerHTML = this.value;
+  }
+
+  var slider9 = document.getElementById("field9");
+  var output9 = document.getElementById("demo9");
+  output9.innerHTML = slider9.value;
+
+  slider9.oninput = function() {
+  output9.innerHTML = this.value;
+  }
+
+  var slider10 = document.getElementById("field10");
+  var output10 = document.getElementById("demo10");
+  output10.innerHTML = slider10.value;
+
+  slider10.oninput = function() {
+  output10.innerHTML = this.value;
+  }
+
+
+}
+
