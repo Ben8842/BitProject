@@ -238,8 +238,13 @@ function myBuildFunction() {
          options: {
          }
         });
-
-
+        /*  not sure how to get this addData function to work
+        function addData(){
+            console.log("21");
+            buildChart.data.datasets[3].data[0] = 20;
+          
+          myLineChart.update();
+        }*/
     });
 
     //$('.result').append(amount1 + " Bitcoins in your portfolio!");
@@ -504,5 +509,10 @@ function displaySlideValue() {
   }
 
 
+}
+
+//This function defines the reset button functionality for build portfolio
+function refreshFunction() {
+    location.reload();
 }
 

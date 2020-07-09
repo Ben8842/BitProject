@@ -30,7 +30,9 @@
     
     </div>
     <hr>
-    <button type="button" class="btn btn-success" onclick="myBuildFunction()">SUBMIT </button>
+    <button type="button" class="btn btn-success btn-lg" onclick="myBuildFunction()">SUBMIT </button>
+    <hr>
+    <button type="button" class="btn btn-danger btn-xs" onclick="refreshFunction()">RESET </button>
     <hr>
     <!---
     How many Bitcoin are in your portfolio? <input type="text" id="field1" value="0"><br>
@@ -105,6 +107,11 @@
 
 <p>Move the sliders below to build your portfolio. Click submit above when finished</p>
 <label for="customRange3">Bitcoin</label>
+
+<!--Exploring ways to update chart, taking away the feature for now here
+    <button type="button" class="btn btn-info btn-xs" onclick="addData()">Add Data</button>
+  -->
+   
 <p id="demo1">Spot for output</p>
 <input type="range" class="custom-range" min="0" max="100" step="0.05" id="field1">
 
