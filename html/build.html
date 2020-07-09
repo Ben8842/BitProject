@@ -18,21 +18,19 @@
 
   </head>
 
-<body>
+<body onload="displaySlideValue()">
     <h1>  Build Portfolio Tool  </h1>
 
 
 
     <canvas id= "buildChart"></canvas>
-    <div class="results-container">
- 
  
       <p class="result"></p>
       <p class="calculation"></p>
     
     </div>
     <hr>
-    <button type="button" class="btn btn-success" onclick="myBuildFunction()">SUBMIT to build your portfolio!</button>
+    <button type="button" class="btn btn-success" onclick="myBuildFunction()">SUBMIT </button>
     <hr>
     <!---
     How many Bitcoin are in your portfolio? <input type="text" id="field1" value="0"><br>
@@ -46,6 +44,8 @@
     How many Binance Coin are in your portfolio?<input type="text" id="field9" value="0"><br>
     How many EOS are in your portfolio?<input type="text" id="field10" value="0"><br>
     -->
+
+    <!-- this is the numerical input below
     <h3>Please enter the number of coins you would like in your portfolio in the fields below:</h3>
     <hr>
     <div class="form-group row">
@@ -100,6 +100,68 @@
       </div>
     </div>
 <hr>
+-->
+<!--This is the slider input below-->
+
+<p>Move the sliders below to build your portfolio. Click submit above when finished</p>
+<label for="customRange3">Bitcoin</label>
+<p id="demo1">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="100" step="0.05" id="field1">
+
+
+<label for="customRange3">Ethereum</label>
+<p id="demo2">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="4000" step="1" id="field2">
+
+<label for="customRange3">XRP</label>
+<p id="demo3">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="10000000" step="10000" id="field3">
+
+<label for="customRange3">Tether</label>
+<p id="demo4">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="1000000" step="100" id="field4">
+
+<label for="customRange3">Bitcoin Cash</label>
+<p id="demo5">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="4000" step="10" id="field5">
+
+<label for="customRange3">Bitcoin SV</label>
+<p id="demo6">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="4000" step="10" id="field6">
+
+<label for="customRange3">Litecoin</label>
+<p id="demo7">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="15000" step="50" id="field7">
+
+<label for="customRange3">Cardano</label>
+<p id="demo8">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="10000" step="100" id="field8">
+
+<label for="customRange3">Binance Coin</label>
+<p id="demo9">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="30000" step="100" id="field9">
+
+<label for="customRange3">EOS</label>
+<p id="demo10">Spot for output</p>
+<input type="range" class="custom-range" min="0" max="550000" step="2500" id="field10">
+
+<hr>
+<!--Dropdown for choosing chart type-->
+<div class="results-container">
+  <div class="form-group">
+   
+    <label for="Choosing">Choose Chart Type</label>
+    <select class="form-control" id="chartType">
+      <option>doughnut</option>
+      <option>pie</option>
+      <option>line</option>
+      <option>bar</option>
+      <option>radar</option>
+      
+    </select>
+  </div>
+
+
 
 
 <!--This links to popper and bootstrap and jquery-->

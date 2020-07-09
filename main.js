@@ -169,10 +169,14 @@ function myBuildFunction() {
     var amount9 = document.getElementById("field9").value
     var amount10 = "";
     var amount10 = document.getElementById("field10").value
-    
+    //Here we are grabbing the drop down chart value
+    var chartType = document.getElementById("chartType");
+    var userChoice = chartType.options[chartType.selectedIndex].value;
+    console.log(chartType);
+    console.log(userChoice);
     
    
-//Here is the (coinlist) api call to get the price of each coin
+    //Here is the (coinlist) api call to get the price of each coin
     $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(portlist){
         console.log(portlist);
 
@@ -209,7 +213,7 @@ function myBuildFunction() {
         var ctx = document.getElementById('buildChart').getContext('2d');
         var chart = new Chart(ctx, {
          // The type of chart we want to create
-         type: 'doughnut',
+         type: userChoice,
      
          // The data for our dataset
          data: {
@@ -231,13 +235,16 @@ function myBuildFunction() {
          },
      
          // Configuration options go here
-         options: {}
+         options: {
+         }
         });
 
 
     });
 
     //$('.result').append(amount1 + " Bitcoins in your portfolio!");
+
+
 
 
 }
@@ -258,6 +265,8 @@ function myNews() {
     $('.newsURL1').append(nurl1);
     $('.body1').append(body1);
 
+    
+
     var icon2= newsy.Data[1].imageurl;
     var title2= newsy.Data[1].title;
     var nurl2= newsy.Data[1].url;
@@ -277,12 +286,15 @@ function myNews() {
     $('.newsTitle3').append(title3);
     $('.newsURL3').append(nurl3);
     $('.body3').append(body3);
+
+    
 });  
 }
 
 //declaring global variable
 var superinfo;
 
+//This function populates the top ten list
 function tenFunction() {
     $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(tenlist){
       console.log(tenlist);
@@ -312,6 +324,7 @@ function tenFunction() {
     });
 }
 
+//various difficulties here
 function detailsFunction(){
     console.log(superinfo);
     $.getJSON("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + superinfo + "&tsyms=USD", function(detailinfo){
@@ -334,3 +347,162 @@ function detailsFunction(){
 
     });
 }
+
+//sorting function for the Hot Coins page
+function hotDisplay() {
+    $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(hots){
+        console.log(hots);
+
+    //This will sort the JSON object by category delta_24, and return a new object 'viking' which I will use to create the hot list.  
+        viking = hots.coins.sort(function(a, b) {
+            return parseFloat(b.delta_24h) - parseFloat(a.delta_24h);
+        });
+        console.log(viking)
+        
+        //this while loop will create the proper id with x and y variables and grabs the proper values from array 
+        //and push the info to the table.
+        var x = 0;
+        var y = 1;
+     while( x < 10) {
+        //these variables hold the proper id to correspond with the html table id values
+        var coinid = "coin" + y;
+        var priceid = "price" + y;
+        var deltaid = "delta" + y;
+        //this variable holds the value and limits it to two decimal places
+        var pricedectwo = Math.floor(viking[x].price * 100) / 100;
+        var deltadectwo = Math.floor(viking[x].delta_24h * 100) / 100;
+
+       // console.log(coinid, priceid, mcid);
+       //This pushes the coin name, current price and 24h price change (%) to the table
+        document.getElementById(coinid).innerHTML = y + ".   " + viking[x].name;
+        document.getElementById(priceid).innerHTML = "$" + pricedectwo.toLocaleString();
+        document.getElementById(deltaid).innerHTML = "% " + deltadectwo.toLocaleString();
+         x++; 
+         y++;
+   }
+      
+    });
+}
+
+//sorting function for the Cold Coins page
+//This is very similar to the hotdisplay function, instead of b-a we do a-b in the compare function
+function coldDisplay() {
+    $.getJSON("https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc", function(hots){
+        console.log(hots);
+
+    //This will sort the JSON object by category delta_24, and return a new object 'viking' which I will use to create the hot list.  
+        viking = hots.coins.sort(function(a, b) {
+            return parseFloat(a.delta_24h) - parseFloat(b.delta_24h);
+        });
+        console.log(viking)
+        
+        //this while loop will create the proper id with x and y variables and grabs the proper values from array 
+        //and push the info to the table.
+        var x = 0;
+        var y = 1;
+     while( x < 10) {
+        //these variables hold the proper id to correspond with the html table id values
+        var coinid = "coin" + y;
+        var priceid = "price" + y;
+        var deltaid = "delta" + y;
+        //this variable holds the value and limits it to two decimal places
+        var pricedectwo = Math.floor(viking[x].price * 100) / 100;
+        var deltadectwo = Math.floor(viking[x].delta_24h * 100) / 100;
+
+       // console.log(coinid, priceid, mcid);
+       //This pushes the coin name, current price and 24h price change (%) to the table
+        document.getElementById(coinid).innerHTML = y + ".   " + viking[x].name;
+        document.getElementById(priceid).innerHTML = "$" + pricedectwo.toLocaleString();
+        document.getElementById(deltaid).innerHTML = "% " + deltadectwo.toLocaleString();
+         x++; 
+         y++;
+}
+
+});
+}
+
+//This function grabs the current slider value and displays it on the build portfolio page
+function displaySlideValue() {
+  var slider1 = document.getElementById("field1");
+  var output1 = document.getElementById("demo1");
+  output1.innerHTML = slider1.value;
+
+  slider1.oninput = function() {
+  output1.innerHTML = this.value;
+  }
+
+  var slider2 = document.getElementById("field2");
+  var output2 = document.getElementById("demo2");
+  output2.innerHTML = slider2.value;
+
+  slider2.oninput = function() {
+  output2.innerHTML = this.value;
+  }
+
+  var slider3 = document.getElementById("field3");
+  var output3 = document.getElementById("demo3");
+  output3.innerHTML = slider3.value;
+
+  slider3.oninput = function() {
+  output3.innerHTML = this.value;
+  }
+
+  var slider4 = document.getElementById("field4");
+  var output4 = document.getElementById("demo4");
+  output4.innerHTML = slider4.value;
+
+  slider4.oninput = function() {
+  output4.innerHTML = this.value;
+  }
+
+  var slider5 = document.getElementById("field5");
+  var output5 = document.getElementById("demo5");
+  output5.innerHTML = slider5.value;
+
+  slider5.oninput = function() {
+  output5.innerHTML = this.value;
+  }
+
+  var slider6 = document.getElementById("field6");
+  var output6 = document.getElementById("demo6");
+  output6.innerHTML = slider6.value;
+
+  slider6.oninput = function() {
+  output6.innerHTML = this.value;
+  }
+
+  var slider7 = document.getElementById("field7");
+  var output7 = document.getElementById("demo7");
+  output7.innerHTML = slider7.value;
+
+  slider7.oninput = function() {
+  output7.innerHTML = this.value;
+  }
+
+  var slider8 = document.getElementById("field8");
+  var output8 = document.getElementById("demo8");
+  output8.innerHTML = slider8.value;
+
+  slider8.oninput = function() {
+  output8.innerHTML = this.value;
+  }
+
+  var slider9 = document.getElementById("field9");
+  var output9 = document.getElementById("demo9");
+  output9.innerHTML = slider9.value;
+
+  slider9.oninput = function() {
+  output9.innerHTML = this.value;
+  }
+
+  var slider10 = document.getElementById("field10");
+  var output10 = document.getElementById("demo10");
+  output10.innerHTML = slider10.value;
+
+  slider10.oninput = function() {
+  output10.innerHTML = this.value;
+  }
+
+
+}
+
