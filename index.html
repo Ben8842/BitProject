@@ -15,24 +15,30 @@
         <link rel="stylesheet" href="css/styles.css">
         <!-- this is to link to bootstap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  
+        <hr>
+        <style>
+          .container-fluid {
+           text-align:center
+          }
+          </style>
+
+<!--testing different headers here-->
+<div class="container-fluid">
+  <h2> Explore the Market </h2>
+<!--<img src="imagePNG/Explore.PNG" class="img-fluid" alt="Responsive image" >-->
+    </div>
+
 
     </head>
 <body>
-
-
-
 <hr>
-    <div class= "title-container">
-        <h5>Explore the market</h3>
-        <h1>
+        <!--<h6>
         <marquee class="tmc" behavior="scroll" direction="left" scrollamount= "14"></marquee>
         <marquee class= "tv_24" behavior="scroll" direction="right" scrollamount= "14"></marquee>
-      </h1>
-    </div>
-    <hr>
-    
-<div>
-    <div class= "rank-container">
+      </h6>-->
+<hr>
+
 
       <!--This section likely not needed anymore-->
       <!--<a href="html/build.html">Build Portfolio</a>
@@ -41,10 +47,31 @@
       <hr>-->
 <!--temporary remove-->
 <!--<button type="button" class="btn btn-success" button onclick="location.href = 'html/build.html';">Build Portfolio</button>--> 
+
+<!--This is needed to set up the Bootstrap Cards-->
 <div class="container">
   <div class="row">
 
-<!--First card here-->
+
+<!--Hot Coin card here-->
+    <div class="col-md-auto">
+    
+      <div class="card" style="width: 18rem;">
+        <img src="imagePNG/HotCoins.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Hot Coins List</h5>
+          <p class="card-text">A list of the HOTTEST coins on the market identifying the percentage change in the past 24 hours. </p>
+          <div class="btn-group-vertical">
+
+          <a href="html/HotCoin.html" class="btn btn-danger btn-md btn-block">Hot Coins Now</a>
+          <a href="html/ColdCoin.html" class="btn btn-info btn-md btn-block">Cold Coins Now</a>
+
+        </div>
+        </div>
+      </div>
+          </div>
+
+<!--Build Portfolio card here-->
     <div class="col-md-auto">
     
 <div class="card" style="width: 18rem;">
@@ -57,7 +84,7 @@
 </div>
     </div>
 
-    <!--fourth card here-->
+    <!--NEWS card here-->
       <div class="col-md-auto">
 
             <div class="card" style="width: 18rem;">
@@ -71,7 +98,7 @@
             
       </div>
    
-    <!--third card here-->
+    <!--Market card here-->
     <div class="col-md-auto">
 
       <div class="card" style="width: 18rem;">
@@ -143,15 +170,25 @@
         </div>
       </div>
     </div>
-   <!-- <canvas id= "myChart"></canvas>-->
+  
 <hr>
 </div>
 
 
 
+<!--This is a widget available from the coinlib.io website-->
+<!--bitcoin graph widget
+<div style="height:560px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:540px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=chart&theme=light&coin_id=859&pref_coin_id=1505" width="100%" height="536px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div></div>
+<hr>-->
 
-<!--<div style="height:560px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:540px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=chart&theme=light&coin_id=859&pref_coin_id=1505" width="100%" height="536px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div></div>
-<hr>
+<!--this is a marquee that pulls some global info from coinlib api-->
+<h6>
+  <marquee class="tmc" behavior="scroll" direction="left" scrollamount= "14"></marquee>
+  <marquee class= "tv_24" behavior="scroll" direction="right" scrollamount= "14"></marquee>
+</h6>
+
+<!--this is a coin info widget available from conlib.io-->
+<!--
 <div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div></div>
 -->
 
