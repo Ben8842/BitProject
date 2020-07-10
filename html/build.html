@@ -19,7 +19,9 @@
   </head>
 
 <body onload="displaySlideValue()">
+  <div class="container-fluid p-5">
     <h1>  Build Portfolio Tool  </h1>
+   </div>
 
 
 
@@ -29,11 +31,12 @@
       <p class="calculation"></p>
     
     </div>
-    <hr>
+
+   <div class="container-fluid p-5">
     <button type="button" class="btn btn-success btn-lg" onclick="myBuildFunction()">SUBMIT </button>
-    <hr>
+<hr>
     <button type="button" class="btn btn-danger btn-xs" onclick="refreshFunction()">RESET </button>
-    <hr>
+   </div>
     <!---
     How many Bitcoin are in your portfolio? <input type="text" id="field1" value="0"><br>
     How many Ethereum are in your portfolio?<input type="text" id="field2" value="0"><br>
@@ -104,7 +107,7 @@
 <hr>
 -->
 <!--This is the slider input below-->
-
+<div class="container-fluid p-5">
 <p>Move the sliders below to build your portfolio. Click submit above when finished</p>
 <label for="customRange3">Bitcoin</label>
 
@@ -151,9 +154,10 @@
 <label for="customRange3">EOS</label>
 <p id="demo10">Spot for output</p>
 <input type="range" class="custom-range" min="0" max="550000" step="2500" id="field10">
-
+</div>
 <hr>
 <!--Dropdown for choosing chart type-->
+<div class="container-fluid p-5">
 <div class="results-container">
   <div class="form-group">
    
@@ -167,7 +171,7 @@
       
     </select>
   </div>
-
+</div>
 
 
 
@@ -180,17 +184,26 @@
 </body>
 
 <footer>
-  <hr>
-  News API from:
+  <div class="container-fluid p-5">
+  
+  
+  <h6>News API from:
   <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
-  <hr>
-  Chart API from:
+</h6>
+ 
+ 
+  <h6>Chart API from:
  <a href="https://chart.js">chart.js</a>
-  <hr>
+ </h6>
+
+ <h6>
   Current market prices and more found using:
  <a href="http://coinlib.io/apidocs">Coinlib API</a>
- <hr>
+</h6>
+
+</div>
 </footer>
+
 
 
 </html>
