@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Build Portfolio</title>
-    
-        <!-- this links to chart.js -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <!-- this links to jquery-->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <!-- this links to js file-->
-        <script src="../main.js"></script>
-        <!-- this links to css file-->
-        <link rel="stylesheet" href="../css/styles.css">
-        <!-- this is to link to bootstap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <!-- this links to chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- this links to jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- this links to js file-->
+    <script src="../main.js"></script>
+    <!-- this links to css file-->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- this is to link to bootstap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
   </head>
 
-<body onload="displaySlideValue()">
-  <div class="container-fluid p-5">
-    <h1>  Build Portfolio Tool  </h1>
-   </div>
-
-
-
-    <canvas id= "buildChart"></canvas>
- 
-      <p class="result"></p>
-      <p class="calculation"></p>
-    
+  <body onload="displaySlideValue()">
+    <div class="container-fluid p-5">
+      <h1>Build Portfolio Tool</h1>
     </div>
 
-   <div class="container-fluid p-5">
-    <button type="button" class="btn btn-success btn-lg" onclick="myBuildFunction()">SUBMIT </button>
-<hr>
-    <button type="button" class="btn btn-danger btn-xs" onclick="refreshFunction()">RESET </button>
-   </div>
+    <canvas id="buildChart"></canvas>
+
+    <p class="result"></p>
+    <p class="calculation"></p>
+
+    <div class="container-fluid p-5">
+      <button
+        type="button"
+        class="btn btn-success btn-lg"
+        onclick="myBuildFunction()"
+      >
+        SUBMIT
+      </button>
+      <hr />
+      <button
+        type="button"
+        class="btn btn-danger btn-xs"
+        onclick="refreshFunction()"
+      >
+        RESET
+      </button>
+    </div>
     <!---
     How many Bitcoin are in your portfolio? <input type="text" id="field1" value="0"><br>
     How many Ethereum are in your portfolio?<input type="text" id="field2" value="0"><br>
@@ -106,104 +121,172 @@
     </div>
 <hr>
 -->
-<!--This is the slider input below-->
-<div class="container-fluid p-5">
-<p>Move the sliders below to build your portfolio. Click submit above when finished</p>
-<label for="customRange3">Bitcoin</label>
+    <!--This is the slider input below-->
+    <div class="container-fluid p-5">
+      <p>
+        Move the sliders below to build your portfolio. Click submit above when
+        finished
+      </p>
+      <label for="customRange3">Bitcoin</label>
 
-<!--Exploring ways to update chart, taking away the feature for now here
+      <!--Exploring ways to update chart, taking away the feature for now here
     <button type="button" class="btn btn-info btn-xs" onclick="addData()">Add Data</button>
   -->
-   
-<p id="demo1">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="100" step="0.05" id="field1">
 
+      <p id="demo1">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="100"
+        step="0.05"
+        id="field1"
+      />
 
-<label for="customRange3">Ethereum</label>
-<p id="demo2">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="4000" step="1" id="field2">
+      <label for="customRange3">Ethereum</label>
+      <p id="demo2">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="4000"
+        step="1"
+        id="field2"
+      />
 
-<label for="customRange3">XRP</label>
-<p id="demo3">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="10000000" step="10000" id="field3">
+      <label for="customRange3">XRP</label>
+      <p id="demo3">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="10000000"
+        step="10000"
+        id="field3"
+      />
 
-<label for="customRange3">Tether</label>
-<p id="demo4">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="1000000" step="100" id="field4">
+      <label for="customRange3">Tether</label>
+      <p id="demo4">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="1000000"
+        step="100"
+        id="field4"
+      />
 
-<label for="customRange3">Bitcoin Cash</label>
-<p id="demo5">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="4000" step="10" id="field5">
+      <label for="customRange3">Bitcoin Cash</label>
+      <p id="demo5">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="4000"
+        step="10"
+        id="field5"
+      />
 
-<label for="customRange3">Bitcoin SV</label>
-<p id="demo6">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="4000" step="10" id="field6">
+      <label for="customRange3">Bitcoin SV</label>
+      <p id="demo6">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="4000"
+        step="10"
+        id="field6"
+      />
 
-<label for="customRange3">Litecoin</label>
-<p id="demo7">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="15000" step="50" id="field7">
+      <label for="customRange3">Litecoin</label>
+      <p id="demo7">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="15000"
+        step="50"
+        id="field7"
+      />
 
-<label for="customRange3">Cardano</label>
-<p id="demo8">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="10000" step="100" id="field8">
+      <label for="customRange3">Cardano</label>
+      <p id="demo8">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="10000"
+        step="100"
+        id="field8"
+      />
 
-<label for="customRange3">Binance Coin</label>
-<p id="demo9">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="30000" step="100" id="field9">
+      <label for="customRange3">Binance Coin</label>
+      <p id="demo9">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="30000"
+        step="100"
+        id="field9"
+      />
 
-<label for="customRange3">EOS</label>
-<p id="demo10">Spot for output</p>
-<input type="range" class="custom-range" min="0" max="550000" step="2500" id="field10">
-</div>
-<hr>
-<!--Dropdown for choosing chart type-->
-<div class="container-fluid p-5">
-<div class="results-container">
-  <div class="form-group">
-   
-    <label for="Choosing">Choose Chart Type</label>
-    <select class="form-control" id="chartType">
-      <option>doughnut</option>
-      <option>pie</option>
-      <option>line</option>
-      <option>bar</option>
-      <option>radar</option>
-      
-    </select>
-  </div>
-</div>
+      <label for="customRange3">EOS</label>
+      <p id="demo10">Spot for output</p>
+      <input
+        type="range"
+        class="custom-range"
+        min="0"
+        max="550000"
+        step="2500"
+        id="field10"
+      />
+    </div>
+    <hr />
+    <!--Dropdown for choosing chart type-->
+    <div class="container-fluid p-5">
+      <div class="results-container">
+        <div class="form-group">
+          <label for="Choosing">Choose Chart Type</label>
+          <select class="form-control" id="chartType">
+            <option>doughnut</option>
+            <option>pie</option>
+            <option>line</option>
+            <option>bar</option>
+            <option>radar</option>
+          </select>
+        </div>
+      </div>
 
+      <!--This links to popper and bootstrap and jquery-->
+      <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+      <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"
+      ></script>
+    </body>
+      <footer>
+        <div class="container-fluid p-5">
+          <h6>
+            News API from:
+            <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
+          </h6>
 
+          <h6>
+            Chart API from:
+            <a href="https://chart.js">chart.js</a>
+          </h6>
 
-<!--This links to popper and bootstrap and jquery-->
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-
-</body>
-
-<footer>
-  <div class="container-fluid p-5">
-  
-  
-  <h6>News API from:
-  <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
-</h6>
- 
- 
-  <h6>Chart API from:
- <a href="https://chart.js">chart.js</a>
- </h6>
-
- <h6>
-  Current market prices and more found using:
- <a href="http://coinlib.io/apidocs">Coinlib API</a>
-</h6>
-
-</div>
-</footer>
-
-
-
+          <h6>
+            Current market prices and more found using:
+            <a href="http://coinlib.io/apidocs">Coinlib API</a>
+          </h6>
+        </div>
+      </footer>
 </html>

@@ -1,173 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Latest News!</title>
-    
-        <!-- this links to chart.js -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <!-- this links to jquery-->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <!-- this links to js file-->
-        <script src="../main.js"></script>
-        <!-- this links to css file-->
-        <link rel="stylesheet" href="../css/styles.css">
-        <!-- this is to link to bootstap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      
-        <style>
-            .img-container {
-                text-align: center;
-            }
-        </style>
 
+    <!-- this links to chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- this links to jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- this links to js file-->
+    <script src="../main.js"></script>
+    <!-- this links to css file-->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- this is to link to bootstap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .img-container {
+        text-align: center;
+      }
+    </style>
   </head>
 
   <body onload="myNews()">
     <div class="container-fluid p-5">
-    <h1 style="text-align:center">Latest News</h1>  
-  </div>
-            <!--FIRST NEWS ARTICLE-->
-       
-           
-            <div class="container-fluid p-5">
-            <div class="img-container">
-                <img class="icon1">
-            </div>
-            
-         
-<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#news1">
-    <h3 class="newsTitle1"></h3>
-</button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="news1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="newsTitle1"></h5>
-          <h5 class ="newsTitle1"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body" id="body1">
-            <h6 class = "body1"></h6>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <h1 style="text-align: center;">Latest News</h1>
+    </div>
+    <!--FIRST NEWS ARTICLE-->
 
+    <div class="container-fluid p-5">
+      <div class="img-container">
+        <img class="icon1" />
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary btn-lg btn-block"
+        data-toggle="modal"
+        data-target="#news1"
+      >
+        <h3 class="newsTitle1"></h3>
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="news1"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newsTitle1"></h5>
+              <h5 class="newsTitle1"></h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="body1">
+              <h6 class="body1"></h6>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-            
-            <a href="" class="newsURL1" style="text-align:center"></a>
 
-            <!--SECOND NEWS ARTICLE-->
+      <a href="" class="newsURL1" style="text-align: center;"></a>
 
-          
-       
-            <div class="img-container">
-                <img class="icon2">
+      <!--SECOND NEWS ARTICLE-->
+
+      <div class="img-container">
+        <img class="icon2" />
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary btn-lg btn-block"
+        data-toggle="modal"
+        data-target="#news2"
+      >
+        <h3 class="newsTitle2"></h3>
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="news2"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newsTitle2"></h5>
+              <h5 class="newsTitle2"></h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            
-          
-<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#news2">
-    <h3 class="newsTitle2"></h3>
-</button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="news2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="newsTitle2"></h5>
-          <h5 class ="newsTitle2"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body" id="body1">
-            <h6 class = "body2"></h6>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+            <div class="modal-body" id="body1">
+              <h6 class="body2"></h6>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-            
-            <a href="" class="newsURL2"></a>
 
-            <!--THIRD NEWS ARTICLE-->
+      <a href="" class="newsURL2"></a>
 
-        
-       
-            <div class="img-container">
-                <img class="icon3">
+      <!--THIRD NEWS ARTICLE-->
+
+      <div class="img-container">
+        <img class="icon3" />
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary btn-lg btn-block"
+        data-toggle="modal"
+        data-target="#news3"
+      >
+        <h3 class="newsTitle3"></h3>
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="news3"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newsTitle3"></h5>
+              <h5 class="newsTitle3"></h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            
-           
-<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#news3">
-    <h3 class="newsTitle3"></h3>
-</button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="news3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="newsTitle3"></h5>
-          <h5 class ="newsTitle3"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body" id="body1">
-            <h6 class = "body3"></h6>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+            <div class="modal-body" id="body1">
+              <h6 class="body3"></h6>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
+      <a href="" class="newsURL3"></a>
     </div>
-  </div>
-            
-            <a href="" class="newsURL3"></a>
-            </div>
 
-        
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 
+  <footer>
+    <hr />
+    <div class="container-fluid p-5">
+      <h6>
+        Image by
+        <a href="https://cooltext.com">Cool Text: Free Graphics Generator</a>
+      </h6>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
-    
-    </body>
-    
-    <footer>
-      <hr>
-      <div class="container-fluid p-5">
-      <h6> Image by <a href="https://cooltext.com">Cool Text: Free Graphics Generator</a></h6>
-      
-      <h6>News API from:
-      <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
-    </h6>
-     
-     
-      <h6>Chart API from:
-     <a href="https://chart.js">chart.js</a>
-     </h6>
-    
-     <h6>
-      Current market prices and more found using:
-     <a href="http://coinlib.io/apidocs">Coinlib API</a>
-    </h6>
-    
+      <h6>
+        News API from:
+        <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
+      </h6>
+
+      <h6>
+        Chart API from:
+        <a href="https://chart.js">chart.js</a>
+      </h6>
+
+      <h6>
+        Current market prices and more found using:
+        <a href="http://coinlib.io/apidocs">Coinlib API</a>
+      </h6>
     </div>
-    </footer>
+  </footer>
 </html>
