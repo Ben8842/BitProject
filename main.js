@@ -1,22 +1,3 @@
-//This uses the global api call to receive general global information for marqee at bottom of home page
-$.getJSON("https://coinlib.io/api/v1/global?key=56a2275998bf3767", function (
-  stuff
-) {
-  //console.log(stuff);
-
-  var numberofcoins = stuff.coins;
-  var tmcap = Math.floor(stuff.total_market_cap);
-  var tv_24 = Math.floor(stuff.total_volume_24h);
-
-  $(".tmc").append(
-    "$" +
-      tmcap.toLocaleString() +
-      "  is the current value of the entire digital currency market.  The current 24 hour volume of the market is: $" +
-      tv_24.toLocaleString()
-  );
-  //$('.tv_24').append("The current 24 hour volume of the market is: $" + tv_24.toLocaleString());
-});
-
 //This function creates a doughnut chart based on the coinlist api top ten information
 const myVis = () => {
   $.getJSON(
@@ -98,26 +79,6 @@ const myVis = () => {
         // Configuration options go here
         options: {},
       });
-    }
-  );
-};
-
-//This function uses the coin api call to get some information on a single coin
-const myBit = () => {
-  $.getJSON(
-    "https://coinlib.io/api/v1/coin?key=56a2275998bf3767&page=1&symbol=BCH",
-    function (coininfo) {
-      console.log(coininfo);
-
-      var delta_24h = coininfo.delta_24h;
-      var mCap = Math.floor(coininfo.market_cap);
-      var price = Math.round(coininfo.price * 100) / 100;
-      var name = coininfo.name;
-
-      $(".CTitleOne").append(name);
-      $(".first").append("Current price is " + price);
-      $(".second").append("24h price change is " + delta_24h + "%");
-      $(".third").append("Market cap is " + mCap);
     }
   );
 };
@@ -512,6 +473,25 @@ const refreshFunction = () => {
   location.reload();
 };
 
+//This uses the global api call to receive general global information for marqee at bottom of home page
+$.getJSON("https://coinlib.io/api/v1/global?key=56a2275998bf3767", function (
+  stuff
+) {
+  //console.log(stuff);
+
+  var numberofcoins = stuff.coins;
+  var tmcap = Math.floor(stuff.total_market_cap);
+  var tv_24 = Math.floor(stuff.total_volume_24h);
+
+  $(".tmc").append(
+    "$" +
+      tmcap.toLocaleString() +
+      "  is the current value of the entire digital currency market.  The current 24 hour volume of the market is: $" +
+      tv_24.toLocaleString()
+  );
+  //$('.tv_24').append("The current 24 hour volume of the market is: $" + tv_24.toLocaleString());
+});
+
 //This function below 'detailsFunction' is currently not used
 //various difficulties here
 const detailsFunction = () => {
@@ -593,6 +573,27 @@ const myFunction = () => {
       $(".eighthM").append("$ " + eighthM.toLocaleString());
       $(".ninthM").append("$ " + ninthM.toLocaleString());
       $(".tenthM").append("$ " + tenthM.toLocaleString());
+    }
+  );
+};
+
+//This function below 'myBit' is currently not used
+//This function uses the coin api call to get some information on a single coin
+const myBit = () => {
+  $.getJSON(
+    "https://coinlib.io/api/v1/coin?key=56a2275998bf3767&page=1&symbol=BCH",
+    function (coininfo) {
+      console.log(coininfo);
+
+      var delta_24h = coininfo.delta_24h;
+      var mCap = Math.floor(coininfo.market_cap);
+      var price = Math.round(coininfo.price * 100) / 100;
+      var name = coininfo.name;
+
+      $(".CTitleOne").append(name);
+      $(".first").append("Current price is " + price);
+      $(".second").append("24h price change is " + delta_24h + "%");
+      $(".third").append("Market cap is " + mCap);
     }
   );
 };
