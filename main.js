@@ -246,7 +246,7 @@ const myNews = () => {
   );
 };
 
-//declaring global variable
+//declaring global variable: this was built to gather a string to be used in another function, another function (detailsFUnction) that is not working yet
 var superinfo;
 
 //This function populates the top ten list
@@ -311,11 +311,11 @@ const hotDisplay = () => {
     function (hots) {
       console.log(hots);
 
-      //This will sort the JSON object by category delta_24, and return a new object 'viking' which I will use to create the hot list.
-      viking = hots.coins.sort(function (a, b) {
+      //This will sort the JSON object by category delta_24, and return a new object 'bottle' which I will use to create the hot list.
+      bottle = hots.coins.sort(function (a, b) {
         return parseFloat(b.delta_24h) - parseFloat(a.delta_24h);
       });
-      console.log(viking);
+      console.log(bottle);
 
       //this while loop will create the proper id with x and y variables and grabs the proper values from array
       //and push the info to the table.
@@ -327,12 +327,12 @@ const hotDisplay = () => {
         var priceid = "price" + y;
         var deltaid = "delta" + y;
         //this variable holds the value and limits it to two decimal places
-        var pricedectwo = Math.floor(viking[x].price * 100) / 100;
-        var deltadectwo = Math.floor(viking[x].delta_24h * 100) / 100;
+        var pricedectwo = Math.floor(bottle[x].price * 100) / 100;
+        var deltadectwo = Math.floor(bottle[x].delta_24h * 100) / 100;
 
         // console.log(coinid, priceid, mcid);
         //This pushes the coin name, current price and 24h price change (%) to the table
-        document.getElementById(coinid).innerHTML = y + ".   " + viking[x].name;
+        document.getElementById(coinid).innerHTML = y + ".   " + bottle[x].name;
         document.getElementById(priceid).innerHTML =
           "$" + pricedectwo.toLocaleString();
         document.getElementById(deltaid).innerHTML =
@@ -352,11 +352,11 @@ const coldDisplay = () => {
     function (hots) {
       console.log(hots);
 
-      //This will sort the JSON object by category delta_24, and return a new object 'viking' which I will use to create the hot list.
-      viking = hots.coins.sort(function (a, b) {
+      //This will sort the JSON object by category delta_24, and return a new object 'bottle' which I will use to create the hot list.
+      bottle = hots.coins.sort(function (a, b) {
         return parseFloat(a.delta_24h) - parseFloat(b.delta_24h);
       });
-      console.log(viking);
+      console.log(bottle);
 
       //this while loop will create the proper id with x and y variables and grabs the proper values from array
       //and push the info to the table.
@@ -368,12 +368,12 @@ const coldDisplay = () => {
         var priceid = "price" + y;
         var deltaid = "delta" + y;
         //this variable holds the value and limits it to two decimal places
-        var pricedectwo = Math.floor(viking[x].price * 100) / 100;
-        var deltadectwo = Math.floor(viking[x].delta_24h * 100) / 100;
+        var pricedectwo = Math.floor(bottle[x].price * 100) / 100;
+        var deltadectwo = Math.floor(bottle[x].delta_24h * 100) / 100;
 
         // console.log(coinid, priceid, mcid);
         //This pushes the coin name, current price and 24h price change (%) to the table
-        document.getElementById(coinid).innerHTML = y + ".   " + viking[x].name;
+        document.getElementById(coinid).innerHTML = y + ".   " + bottle[x].name;
         document.getElementById(priceid).innerHTML =
           "$" + pricedectwo.toLocaleString();
         document.getElementById(deltaid).innerHTML =
