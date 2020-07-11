@@ -1,20 +1,28 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
 
-  .calculation{
-    text-align: center;
-    font-size: 80;
-  }
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.calculation {
+  text-align: center;
+  font-size: 80;
+}
+
+.container-fluid {
+  text-align: center;
+}
+
+.container-fluid p-5 {
+  text-align: center;
+}
