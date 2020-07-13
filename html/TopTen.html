@@ -63,9 +63,7 @@
     -->
   <body onload="tenFunction()">
     <div class="container-fluid p-5">
-      <h1>
-        The Top Ten Coins of the market
-      </h1>
+      <h1 class="display-1">Top Ten</h1>
     </div>
     <h6>
       <!--
@@ -118,9 +116,9 @@
     -->
 
       <!--This creates a table with an accordian inside-->
-      <div class="container-fluid p-5">
+      <div id="accordion">
         <div class="table-responsive">
-          <table class="table">
+          <table class="table table-dark table-hover">
             <!--Here is the Header-->
             <thead>
               <tr>
@@ -151,20 +149,31 @@
                 <td colspan="3">
                   <div id="collapseOne" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">24 hour change</div>
-                      <div class="col-6" id="cpd">value 1</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid1"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">1 hour change</div>
-                      <div class="col-6" id="cph">value 2</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid1"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">High</div>
-                      <div class="col-6" id="hday">value 3</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">Low</div>
-                      <div class="col-6" id="lday">value 4</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid1"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -185,23 +194,34 @@
               <!--This tr tag has the second collapsed information section(co)-->
               <tr class="hide-table-padding">
                 <td></td>
-                <td colspan="4">
+                <td colspan="3">
                   <div id="collapseTwo" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid2"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid2"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid2"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -225,20 +245,31 @@
                 <td colspan="3">
                   <div id="collapseThree" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 1</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid3"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 2</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid3"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 3</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 4</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid3"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -262,20 +293,31 @@
                 <td colspan="3">
                   <div id="collapseFour" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 1</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid4"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 2</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid4"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 3</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 4</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid4"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -299,20 +341,31 @@
                 <td colspan="3">
                   <div id="collapseFive" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 1</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid5"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 2</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid5"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 3</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 4</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid5"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -336,20 +389,31 @@
                 <td colspan="3">
                   <div id="collapseSix" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 1</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid6"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 2</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid6"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 3</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 4</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid6"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -373,20 +437,31 @@
                 <td colspan="3">
                   <div id="collapseSeven" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 1</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid7"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 2</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid7"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 3</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 4</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid7"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -410,20 +485,31 @@
                 <td colspan="3">
                   <div id="collapseEight" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 1</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid8"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 2</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid8"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 3</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 4</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid8"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -447,20 +533,31 @@
                 <td colspan="3">
                   <div id="collapseNine" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 1</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid9"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 2</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid9"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 3</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 4</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid9"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -484,20 +581,31 @@
                 <td colspan="3">
                   <div id="collapseTen" class="collapse in p-3">
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 1</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid10"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 2</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid10"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 3</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-2">label</div>
-                      <div class="col-6">value 4</div>
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid10"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
                     </div>
                   </div>
                 </td>
