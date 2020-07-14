@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Top Ten</title>
-    
-        <!-- this links to chart.js -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <!-- this links to jquery-->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <!-- this links to js file-->
-        <script src="../main.js"></script>
-        <!-- this links to css file-->
-        <link rel="stylesheet" href="../css/styles.css">
-        <!-- this is to link to bootstap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      
 
-
+    <!-- this links to chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- this links to jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- this links to js file-->
+    <script src="../main.js"></script>
+    <!-- this links to css file-->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- this is to link to bootstap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
   </head>
-<!-- This is one way to display top ten
+  <!-- This is one way to display top ten
     <body onload="myFunction()">
         <h3>Top Ten</h3>
 
@@ -56,15 +61,15 @@
         </div>
       </div>
     -->
-    <body onload="tenFunction()">
-      <h1>
-      The Top Ten Coins of the market
-      </h1>
-      <h6>
-        <!--
+  <body onload="tenFunction()">
+    <div class="container-fluid p-5">
+      <h1 class="display-1">Top Ten</h1>
+    </div>
+    <h6>
+      <!--
         <button type="button" class="btn btn-success" button onclick="detailsFunction()">Load Details</button>-->
 
-        <!--This button is probably not needed
+      <!--This button is probably not needed
       <hr>
 
 
@@ -110,340 +115,508 @@
       </table>
     -->
 
-    <!--This creates a table with an accordian inside-->
-    <div class="table-responsive">
-      <table class="table">
-        <!--Here is the Header-->
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Coin</th>
-            <th scope="col">Price</th>
-            <th scope="col">Market Cap</th>
-          </tr>
-        </thead>
-        <!--This is where the body of accordions begins-->
-        <tbody>
-          <!--This tr tag is the first accordian(ac)-->
-          <tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
-    <td class="expand-button"></td>
-    <td id="coin1">Cell</td>
-    <td id="price1">Cell</td>
-    <td id="mc1">Cell</td>
-    
-    </tr>
-          <!--This tr tag has the collapsed information section(co)-->
-    <tr class="hide-table-padding">
-    <td></td>
-    <td colspan="3">
-    <div id="collapseOne" class="collapse in p-3">
-      <div class="row">
-        <div class="col-2" >24 hour change</div>
-        <div class="col-6" id="cpd">value 1</div>
+      <!--This creates a table with an accordian inside-->
+      <div id="accordion">
+        <div class="table-responsive">
+          <table class="table table-dark table-hover">
+            <!--Here is the Header-->
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Coin</th>
+                <th scope="col">Price</th>
+                <th scope="col">Market Cap</th>
+              </tr>
+            </thead>
+            <!--This is where the body of accordions begins-->
+            <tbody>
+              <!--This tr tag is the first accordian(ac)-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion1"
+                data-toggle="collapse"
+                data-parent="#accordion1"
+                href="#collapseOne"
+              >
+                <td class="expand-button"></td>
+                <td id="coin1">Cell</td>
+                <td id="price1">Cell</td>
+                <td id="mc1">Cell</td>
+              </tr>
+              <!--This tr tag has the collapsed information section(co)-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseOne" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid1"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid1"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid1"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!--This tr tag is the second accordian(ac)-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion2"
+                data-toggle="collapse"
+                data-parent="#accordion2"
+                href="#collapseTwo"
+              >
+                <td class="expand-button"></td>
+                <td id="coin2">cell</td>
+                <td id="price2">cell</td>
+                <td id="mc2">cell</td>
+              </tr>
+              <!--This tr tag has the second collapsed information section(co)-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseTwo" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid2"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid2"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid2"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!--third ac-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion1"
+                data-toggle="collapse"
+                data-parent="#accordion1"
+                href="#collapseThree"
+              >
+                <td class="expand-button"></td>
+                <td id="coin3">Cell</td>
+                <td id="price3">Cell</td>
+                <td id="mc3">Cell</td>
+              </tr>
+              <!--third co-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseThree" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid3"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid3"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid3"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!--fourth ac-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion1"
+                data-toggle="collapse"
+                data-parent="#accordion1"
+                href="#collapseFour"
+              >
+                <td class="expand-button"></td>
+                <td id="coin4">Cell</td>
+                <td id="price4">Cell</td>
+                <td id="mc4">Cell</td>
+              </tr>
+              <!--fourth co-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseFour" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid4"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid4"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid4"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!--fifth ac-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion1"
+                data-toggle="collapse"
+                data-parent="#accordion1"
+                href="#collapseFive"
+              >
+                <td class="expand-button"></td>
+                <td id="coin5">Cell</td>
+                <td id="price5">Cell</td>
+                <td id="mc5">Cell</td>
+              </tr>
+              <!--fifth co-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseFive" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid5"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid5"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid5"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!--sixth ac-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion1"
+                data-toggle="collapse"
+                data-parent="#accordion1"
+                href="#collapseSix"
+              >
+                <td class="expand-button"></td>
+                <td id="coin6">Cell</td>
+                <td id="price6">Cell</td>
+                <td id="mc6">Cell</td>
+              </tr>
+              <!--sixth co-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseSix" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid6"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid6"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid6"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!--seventh ac-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion1"
+                data-toggle="collapse"
+                data-parent="#accordion1"
+                href="#collapseSeven"
+              >
+                <td class="expand-button"></td>
+                <td id="coin7">Cell</td>
+                <td id="price7">Cell</td>
+                <td id="mc7">Cell</td>
+              </tr>
+              <!--seventh co-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseSeven" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid7"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid7"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid7"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!--eighth ac-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion1"
+                data-toggle="collapse"
+                data-parent="#accordion1"
+                href="#collapseEight"
+              >
+                <td class="expand-button"></td>
+                <td id="coin8">Cell</td>
+                <td id="price8">Cell</td>
+                <td id="mc8">Cell</td>
+              </tr>
+              <!--eighth co-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseEight" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid8"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid8"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid8"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!--ninth ac-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion1"
+                data-toggle="collapse"
+                data-parent="#accordion1"
+                href="#collapseNine"
+              >
+                <td class="expand-button"></td>
+                <td id="coin9">Cell</td>
+                <td id="price9">Cell</td>
+                <td id="mc9">Cell</td>
+              </tr>
+              <!--ninth co-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseNine" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid9"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid9"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid9"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!--tenth ac-->
+              <tr
+                class="accordion-toggle collapsed"
+                id="accordion1"
+                data-toggle="collapse"
+                data-parent="#accordion1"
+                href="#collapseTen"
+              >
+                <td class="expand-button"></td>
+                <td id="coin10">Cell</td>
+                <td id="price10">Cell</td>
+                <td id="mc10">Cell</td>
+              </tr>
+              <!--tenth co-->
+              <tr class="hide-table-padding">
+                <td></td>
+                <td colspan="3">
+                  <div id="collapseTen" class="collapse in p-3">
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="symbolid10"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Symbol
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="delta_24hid10"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        24 hour change
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-2 border-bottom border-right border-warning"
+                        id="volume_24hid10"
+                      ></div>
+                      <div class="col-6 border-bottom border-warning">
+                        Volume
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-2">1 hour change</div>
-        <div class="col-6" id = "cph">value 2</div>
-      </div>
-      <div class="row">
-        <div class="col-2">High</div>
-        <div class="col-6" id="hday">value 3</div>
-      </div>
-      <div class="row">
-        <div class="col-2">Low</div>
-        <div class="col-6" id="lday">value 4</div>
-      </div>
-    </div></td>
-    </tr>
-    <!--This tr tag is the second accordian(ac)-->
-          <tr class="accordion-toggle collapsed" id="accordion2" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-    <td class="expand-button"></td>
-    <td id="coin2">cell</td>
-    <td id="price2">cell</td>
-    <td id="mc2">cell</td>
-    
-    </tr>
-    <!--This tr tag has the second collapsed information section(co)-->
-    <tr class="hide-table-padding">
-    <td></td>
-    <td colspan="4">
-    <div id="collapseTwo" class="collapse in p-3">
-      <div class="row">
-        <div class="col-2">label</div>
-        <div class="col-6">value</div>
-      </div>
-      <div class="row">
-        <div class="col-2">label</div>
-        <div class="col-6">value</div>
-      </div>
-      <div class="row">
-        <div class="col-2">label</div>
-        <div class="col-6">value</div>
-      </div>
-      <div class="row">
-        <div class="col-2">label</div>
-        <div class="col-6">value</div>
-      </div>
-    </div></td>
-    </tr>
-<!--third ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">
-  <td class="expand-button"></td>
-  <td id="coin3">Cell</td>
-  <td id="price3">Cell</td>
-  <td id="mc3">Cell</td>
-  
-  </tr>
-<!--third co-->
-<tr class="hide-table-padding">
-  <td></td>
-  <td colspan="3">
-  <div id="collapseThree" class="collapse in p-3">
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 1</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 2</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 3</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 4</div>
-    </div>
-  </div></td>
-  </tr>
-<!--fourth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">
-  <td class="expand-button"></td>
-  <td id="coin4">Cell</td>
-  <td id="price4">Cell</td>
-  <td id="mc4">Cell</td>
-  
-  </tr>
-<!--fourth co-->
-<tr class="hide-table-padding">
-  <td></td>
-  <td colspan="3">
-  <div id="collapseFour" class="collapse in p-3">
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 1</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 2</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 3</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 4</div>
-    </div>
-  </div></td>
-  </tr>
-<!--fifth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">
-  <td class="expand-button"></td>
-  <td id="coin5">Cell</td>
-  <td id="price5">Cell</td>
-  <td id="mc5">Cell</td>
-  
-  </tr>
-<!--fifth co-->
-<tr class="hide-table-padding">
-  <td></td>
-  <td colspan="3">
-  <div id="collapseFive" class="collapse in p-3">
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 1</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 2</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 3</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 4</div>
-    </div>
-  </div></td>
-  </tr>
-<!--sixth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseSix">
-  <td class="expand-button"></td>
-  <td id="coin6">Cell</td>
-  <td id="price6">Cell</td>
-  <td id="mc6">Cell</td>
-  
-  </tr>
-<!--sixth co-->
-<tr class="hide-table-padding">
-  <td></td>
-  <td colspan="3">
-  <div id="collapseSix" class="collapse in p-3">
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 1</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 2</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 3</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 4</div>
-    </div>
-  </div></td>
-  </tr>
-<!--seventh ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseSeven">
-  <td class="expand-button"></td>
-  <td id="coin7">Cell</td>
-  <td id="price7">Cell</td>
-  <td id="mc7">Cell</td>
-  
-  </tr>
-<!--seventh co-->
-<tr class="hide-table-padding">
-  <td></td>
-  <td colspan="3">
-  <div id="collapseSeven" class="collapse in p-3">
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 1</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 2</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 3</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 4</div>
-    </div>
-  </div></td>
-  </tr>
-<!--eighth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseEight">
-  <td class="expand-button"></td>
-  <td id="coin8">Cell</td>
-  <td id="price8">Cell</td>
-  <td id="mc8">Cell</td>
-  
-  </tr>
-<!--eighth co-->
-<tr class="hide-table-padding">
-  <td></td>
-  <td colspan="3">
-  <div id="collapseEight" class="collapse in p-3">
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 1</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 2</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 3</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 4</div>
-    </div>
-  </div></td>
-  </tr>
-<!--ninth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseNine">
-  <td class="expand-button"></td>
-  <td id="coin9">Cell</td>
-  <td id="price9">Cell</td>
-  <td id="mc9">Cell</td>
-  
-  </tr>
-<!--ninth co-->
-<tr class="hide-table-padding">
-  <td></td>
-  <td colspan="3">
-  <div id="collapseNine" class="collapse in p-3">
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 1</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 2</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 3</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 4</div>
-    </div>
-  </div></td>
-  </tr>
-<!--tenth ac-->
-<tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseTen">
-  <td class="expand-button"></td>
-  <td id="coin10">Cell</td>
-  <td id="price10">Cell</td>
-  <td id="mc10">Cell</td>
-  
-  </tr>
-<!--tenth co-->
-<tr class="hide-table-padding">
-  <td></td>
-  <td colspan="3">
-  <div id="collapseTen" class="collapse in p-3">
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 1</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 2</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 3</div>
-    </div>
-    <div class="row">
-      <div class="col-2">label</div>
-      <div class="col-6">value 4</div>
-    </div>
-  </div></td>
-  </tr>
+    </h6>
 
-
-        </tbody>
-      </table>
-    </div>
-</h6>
-
-
-
-<!--This is an accordion testing
+    <!--This is an accordion testing
 <hr>
 
       <div class="accordion" id="accordionExample">
@@ -529,25 +702,40 @@
 
     -->
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 
+  <footer>
+    <hr />
+    <div class="container-fluid p-5">
+      <h6>
+        Image by
+        <a href="https://cooltext.com">Cool Text: Free Graphics Generator</a>
+      </h6>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
-    
-    </body>
-    
-    <footer>
-      <hr>
-      News API from:
-      <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
-      <hr>
-      Chart API from:
-     <a href="https://chart.js">chart.js</a>
-      <hr>
-      Current market prices and more found using:
-     <a href="http://coinlib.io/apidocs">Coinlib API</a>
-     <hr>
-    </footer>
-    
+      <h6>
+        News API from:
+        <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
+      </h6>
+
+      <h6>
+        Chart API from:
+        <a href="https://chart.js">chart.js</a>
+      </h6>
+
+      <h6>
+        Current market prices and more found using:
+        <a href="http://coinlib.io/apidocs">Coinlib API</a>
+      </h6>
+    </div>
+  </footer>
 </html>

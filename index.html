@@ -1,217 +1,265 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        
-        <title>Currency Project</title>
-        <!-- this links to chart.js -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <!-- this links to jquery-->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <!-- this links to js file-->
-        <script src="main.js"></script>
-        <!-- this links to css file-->
-        <link rel="stylesheet" href="css/styles.css">
-        <!-- this is to link to bootstap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  
-        <hr>
-        <style>
-          .container-fluid {
-           text-align:center
-          }
-          </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
 
-<!--testing different headers here-->
-<div class="container-fluid">
-  <h2> Explore the Market </h2>
-<!--<img src="imagePNG/Explore.PNG" class="img-fluid" alt="Responsive image" >-->
+    <title>Currency Project</title>
+    <!-- this links to chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- this links to jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- this links to js file-->
+    <script src="main.js"></script>
+    <!-- this links to css file-->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- this is to link to bootstap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!--testing different headers here-->
+    <div class="container-fluid p-5">
+      <h1 class="display-1">Explore the Market</h1>
     </div>
 
-
-    </head>
-<body>
-<hr>
-        <!--<h6>
+    <!--<img src="imagePNG/Explore.PNG" class="img-fluid" alt="Responsive image" >-->
+  </head>
+  <body>
+    <!--moved to the bottom of page:
+      <h6>
         <marquee class="tmc" behavior="scroll" direction="left" scrollamount= "14"></marquee>
         <marquee class= "tv_24" behavior="scroll" direction="right" scrollamount= "14"></marquee>
       </h6>-->
-<hr>
 
-
-      <!--This section likely not needed anymore-->
-      <!--<a href="html/build.html">Build Portfolio</a>
+    <!--This section likely not needed anymore-->
+    <!--<a href="html/build.html">Build Portfolio</a>
       <hr>
       <a href="html/coin.html">Coin Information</a>
       <hr>-->
-<!--temporary remove-->
-<!--<button type="button" class="btn btn-success" button onclick="location.href = 'html/build.html';">Build Portfolio</button>--> 
+    <!--temporary remove-->
+    <!--<button type="button" class="btn btn-success" button onclick="location.href = 'html/build.html';">Build Portfolio</button>-->
 
-<!--This is needed to set up the Bootstrap Cards-->
-<div class="container">
-  <div class="row">
-
-
-<!--Hot Coin card here-->
-    <div class="col-md-auto">
-    
-      <div class="card" style="width: 18rem;">
-        <img src="imagePNG/HotCoins.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Hot Coins List</h5>
-          <p class="card-text">A list of the HOTTEST coins on the market identifying the percentage change in the past 24 hours. </p>
-          <div class="btn-group-vertical">
-
-          <a href="html/HotCoin.html" class="btn btn-danger btn-md btn-block">Hot Coins Now</a>
-          <a href="html/ColdCoin.html" class="btn btn-info btn-md btn-block">Cold Coins Now</a>
-
-        </div>
-        </div>
-      </div>
-          </div>
-
-<!--Build Portfolio card here-->
-    <div class="col-md-auto">
-    
-<div class="card" style="width: 18rem;">
-  <img src="imagePNG/BUILD.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Build Portfolio Tool</h5>
-    <p class="card-text">This tool gives you an opportunity to build your portfolio and analyze your current allocation based on current prices.</p>
-    <a href="html/build.html" class="btn btn-primary stretched-link">Build Portfolio Now</a>
-  </div>
-</div>
-    </div>
-
-    <!--NEWS card here-->
-      <div class="col-md-auto">
-
-            <div class="card" style="width: 18rem;">
-              <img src="imagePNG/News.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Market News</h5>
-                <p class="card-text">This is the place to find the latest news in the market.</p>
-                <a href="html/News.html" class="btn btn-primary stretched-link">Latest Market News</a>
+    <!--This is needed to set up the Bootstrap Cards-->
+    <div class="container">
+      <div class="row">
+        <!--Hot Coin card here-->
+        <div class="col-md-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="imagePNG/HotCoins.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Hot Coins List</h5>
+              <p class="card-text">
+                A list of the HOTTEST coins on the market identifying the
+                percentage change in the past 24 hours.
+              </p>
+              <div class="btn-group-vertical">
+                <a
+                  href="html/HotCoin.html"
+                  class="btn btn-danger btn-md btn-block"
+                  >Hot Coins Now</a
+                >
+                <a
+                  href="html/ColdCoin.html"
+                  class="btn btn-info btn-md btn-block"
+                  >Cold Coins Now</a
+                >
               </div>
             </div>
-            
-      </div>
-   
-    <!--Market card here-->
-    <div class="col-md-auto">
+          </div>
+        </div>
 
-      <div class="card" style="width: 18rem;">
-        <img src="imagePNG/MarketView.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Market at a glance</h5>
-          <p class="card-text">This tool allows you to chart the top ten coins in the market</p>
-          <a href="html/market.html" class="btn btn-primary stretched-link">View Market Now</a>
+        <!--Build Portfolio card here-->
+        <div class="col-md-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="imagePNG/BUILD.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Build Portfolio Tool</h5>
+              <p class="card-text">
+                This tool gives you an opportunity to build your portfolio and
+                analyze your current allocation based on current prices.
+              </p>
+              <a href="html/build.html" class="btn btn-primary stretched-link"
+                >Build Portfolio Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!--Top One Hundred card here-->
+        <div class="col-md-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="imagePNG/onehundred.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Top 100</h5>
+              <p class="card-text">
+                This tool allows you to view the top one hundred coins in the
+                market
+              </p>
+              <a
+                href="html/TopOneHundred.html"
+                class="btn btn-primary stretched-link"
+                >Top 100 Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!--NEWS card here-->
+        <div class="col-md-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="imagePNG/News.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Market News</h5>
+              <p class="card-text">
+                This is the place to find the latest news in the market.
+              </p>
+              <a href="html/News.html" class="btn btn-primary stretched-link"
+                >Latest Market News</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!--Market card here-->
+        <div class="col-md-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="imagePNG/MarketView.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Market at a glance</h5>
+              <p class="card-text">
+                This tool allows you to chart the top ten coins in the market
+              </p>
+              <a href="html/market.html" class="btn btn-primary stretched-link"
+                >View Market Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!--Top Ten card here-->
+        <div class="col-md-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="imagePNG/TopTen.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Top Ten</h5>
+              <p class="card-text">
+                View a list of the current top ten currencies and learn more
+                about the market
+              </p>
+              <a href="html/TopTen.html" class="btn btn-primary stretched-link"
+                >The Top Ten</a
+              >
+            </div>
+          </div>
         </div>
       </div>
-      
     </div>
 
-    <!--Top Ten card here-->
-    <div class="col-md-auto">
-
-<div class="card" style="width: 18rem;">
-  <img src="imagePNG/TopTen.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Top Ten</h5>
-    <p class="card-text">View a list of the current top ten currencies and learn more about the market</p>
-    <a href="html/TopTen.html" class="btn btn-primary stretched-link">The Top Ten</a>
-  </div>
-</div>
-
-    </div>
-
-
-
-
-    </div>
-  </div>
-
-<!-- Temporarily hiding these buttons
+    <!-- Temporarily hiding these buttons
 <button type="button" class="btn btn-success" button onclick="myFunction()">Top Ten</button>
 <button type="button" class="btn btn-success" button onclick="myFunction()">Hottest Coins</button>
 <button type="button" class="btn btn-success" onclick="myBit()">Coldest Coins</button>
 <button type="button" class="btn btn-success" onclick="myVis()">Market Visualization</button>
 -->
-<hr>   
-       <div class="row">
-        <div class="column" >
-          <h2 class="CTitleOne"></h2>
-         
-          <p class= "first"></p>
-          <p class= "second"></p>
-          <p class= "third"></p>
-          <p class= "fourth"></p>
-          <p class= "fifth"></p>
-          <p class= "sixth"></p>
-          <p class= "seventh"></p>
-          <p class= "eighth"></p>
-          <p class= "ninth"></p>
-          <p class= "tenth"></p>
 
-        </div>
-        <div class="column" >
-          <h2 class="CTitleTwo"></h2>
-          <p class= "firstM"></p>
-          <p class= "secondM"></p>
-          <p class= "thirdM"></p>
-          <p class= "fourthM"></p>
-          <p class= "fifthM"></p>
-          <p class= "sixthM"></p>
-          <p class= "seventhM"></p>
-          <p class= "eighthM"></p>
-          <p class= "ninthM"></p>
-          <p class= "tenthM"></p>
-        </div>
+    <!--This was originally used to show top ten on home page, now this idea was moved to own topten html page
+    <hr />
+    <div class="row">
+      <div class="column">
+        <h2 class="CTitleOne"></h2>
+
+        <p class="first"></p>
+        <p class="second"></p>
+        <p class="third"></p>
+        <p class="fourth"></p>
+        <p class="fifth"></p>
+        <p class="sixth"></p>
+        <p class="seventh"></p>
+        <p class="eighth"></p>
+        <p class="ninth"></p>
+        <p class="tenth"></p>
+      </div>
+      <div class="column">
+        <h2 class="CTitleTwo"></h2>
+        <p class="firstM"></p>
+        <p class="secondM"></p>
+        <p class="thirdM"></p>
+        <p class="fourthM"></p>
+        <p class="fifthM"></p>
+        <p class="sixthM"></p>
+        <p class="seventhM"></p>
+        <p class="eighthM"></p>
+        <p class="ninthM"></p>
+        <p class="tenthM"></p>
       </div>
     </div>
-  
-<hr>
-</div>
+-->
 
-
-
-<!--This is a widget available from the coinlib.io website-->
-<!--bitcoin graph widget
+    <!--This is a widget available from the coinlib.io website-->
+    <!--bitcoin graph widget
 <div style="height:560px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:540px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=chart&theme=light&coin_id=859&pref_coin_id=1505" width="100%" height="536px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div></div>
 <hr>-->
 
-<!--this is a marquee that pulls some global info from coinlib api-->
-<h6>
-  <marquee class="tmc" behavior="scroll" direction="left" scrollamount= "14"></marquee>
-  <marquee class= "tv_24" behavior="scroll" direction="right" scrollamount= "14"></marquee>
-</h6>
+    <!--this is a marquee that pulls some global info from coinlib api-->
+    <h6>
+      <marquee
+        class="tmc"
+        behavior="scroll"
+        direction="left"
+        scrollamount="14"
+      ></marquee>
+      <marquee
+        class="tv_24"
+        behavior="scroll"
+        direction="right"
+        scrollamount="14"
+      ></marquee>
+    </h6>
 
-<!--this is a coin info widget available from conlib.io-->
-<!--
+    <!--this is a coin info widget available from conlib.io-->
+    <!--
 <div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div></div>
 -->
 
-<!--This links to popper and bootstrap and jquery-->
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!--This links to popper and bootstrap and jquery-->
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 
-</body>
+  <footer>
+    <div class="container-fluid p-5">
+      <h6>
+        News API from:
+        <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
+      </h6>
 
-<footer>
-  <hr>
-       News API from:
-  <a href="https://min-api.cryptocompare.com/">cryptocompare.api</a>
-  <hr>
-       Chart API from:
- <a href="https://chart.js">chart.js</a>
-  <hr>
-       Current market prices and more found using:
- <a href="http://coinlib.io/apidocs">Coinlib API</a>
- <hr>
-</footer>
+      <h6>
+        Chart API from:
+        <a href="https://chart.js">chart.js</a>
+      </h6>
 
+      <h6>
+        Current market prices and more found using:
+        <a href="http://coinlib.io/apidocs">Coinlib API</a>
+      </h6>
+    </div>
+  </footer>
 </html>
 
 <!-- API KEY IS 56a2275998bf3767
