@@ -31,25 +31,29 @@
     <div class="container-fluid p-5">
       <h1 class="display-3">Coin List</h1>
     </div>
-    <table id="table_id" class="table table-hover table-info table-responsive">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th scope="col">Coin Name</th>
-          <th scope="col">Ticker</th>
-          <th scope="col">Price</th>
-          <th scope="col">24h price change</th>
-          <th scope="col">Market Cap</th>
-          <th scope="col">24h Volume</th>
-        </tr>
-      </thead>
+    <!--
+    <table id="table_id" class="table table-hover table-responsive">
+      -->
+    <div class="p-3">
+      <table id="table_id" class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th scope="col">Coin Name</th>
+            <th scope="col">Ticker</th>
+            <th scope="col">Price</th>
+            <th scope="col">24h price change</th>
+            <th scope="col">Market Cap</th>
+            <th scope="col">24h Volume</th>
+          </tr>
+        </thead>
 
-      <tbody id="superCoinPlace"></tbody>
-    </table>
-    <script>
-      getCoinListSort();
-    </script>
-
+        <tbody id="superCoinPlace"></tbody>
+      </table>
+      <script>
+        getCoinListSort();
+      </script>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"

@@ -56,13 +56,38 @@
               <h5 class="card-title">Coin List</h5>
               <p class="card-text">
                 A sortable list of coins on the market. Search for your coin and
-                list the data as you wish. Sort to your hearts desire.
+                list the data as you wish. Sort to your heart's desire.
               </p>
               <a
                 href="html/CoinList.html"
                 class="btn btn-primary stretched-link"
                 >Coin List Now</a
               >
+            </div>
+          </div>
+        </div>
+
+        <!--NEWS card here-->
+        <div class="col-md-auto">
+          <div class="card" style="width: 18rem;">
+            <img src="imagePNG/News.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Market News</h5>
+              <p class="card-text">
+                This is the place to find the latest news in the market.
+              </p>
+              <div class="btn-group-vertical">
+                <a
+                  href="html/NewsTwo.html"
+                  class="btn btn-info btn-md btn-block"
+                  >News Now (carousel view)</a
+                >
+                <a
+                  href="html/News.html"
+                  class="btn btn-success btn-md btn-block"
+                  >News Now (modal view)</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -124,22 +149,6 @@
                 href="html/TopOneHundred.html"
                 class="btn btn-primary stretched-link"
                 >Top 100 Now</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!--NEWS card here-->
-        <div class="col-md-auto">
-          <div class="card" style="width: 18rem;">
-            <img src="imagePNG/News.png" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Market News</h5>
-              <p class="card-text">
-                This is the place to find the latest news in the market.
-              </p>
-              <a href="html/News.html" class="btn btn-primary stretched-link"
-                >Latest Market News</a
               >
             </div>
           </div>
@@ -226,25 +235,87 @@
 <hr>-->
 
     <!--this is a marquee that pulls some global info from coinlib api-->
-    <h6>
-      <marquee
-        class="tmc"
-        behavior="scroll"
-        direction="left"
-        scrollamount="14"
-      ></marquee>
-      <marquee
-        class="tv_24"
-        behavior="scroll"
-        direction="right"
-        scrollamount="14"
-      ></marquee>
-    </h6>
+
+    <hr />
+    <hr />
+    <div class="p-2">
+      <h4>
+        <marquee
+          class="tmc"
+          behavior="scroll"
+          direction="left"
+          scrollamount="14"
+        ></marquee>
+        <marquee
+          class="tv_24"
+          behavior="scroll"
+          direction="right"
+          scrollamount="14"
+        ></marquee>
+      </h4>
+    </div>
 
     <!--this is a coin info widget available from conlib.io-->
-    <!--
-<div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div></div>
--->
+
+    <div
+      style="
+        height: 62px;
+        background-color: #ffffff;
+        overflow: hidden;
+        box-sizing: border-box;
+        border: 1px solid #56667f;
+        border-radius: 4px;
+        text-align: right;
+        line-height: 14px;
+        block-size: 62px;
+        font-size: 12px;
+        font-feature-settings: normal;
+        text-size-adjust: 100%;
+        box-shadow: inset 0 -20px 0 0 #56667f;
+        padding: 1px;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+      "
+    >
+      <div style="height: 40px; padding: 0px; margin: 0px; width: 100%;">
+        <iframe
+          src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover="
+          width="100%"
+          height="36px"
+          scrolling="auto"
+          marginwidth="0"
+          marginheight="0"
+          frameborder="0"
+          border="0"
+          style="border: 0; margin: 0; padding: 0;"
+        ></iframe>
+      </div>
+      <div
+        style="
+          color: #ffffff;
+          line-height: 14px;
+          font-weight: 400;
+          font-size: 11px;
+          box-sizing: border-box;
+          padding: 2px 6px;
+          width: 100%;
+          font-family: Verdana, Tahoma, Arial, sans-serif;
+        "
+      >
+        <a
+          href="https://coinlib.io"
+          target="_blank"
+          style="
+            font-weight: 500;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 11px;
+          "
+          >Cryptocurrency Prices</a
+        >&nbsp;by Coinlib
+      </div>
+    </div>
 
     <!--This links to popper and bootstrap and jquery-->
     <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
