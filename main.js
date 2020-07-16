@@ -552,9 +552,15 @@ getCoinList = () => {
 };
 
 //This Function is necessary to trigger the sortable list for the Coin List page
-$(document).ready(function () {
-  $("#table_id").DataTable();
-});
+//I cleverly wrapped this into its own function so that the sortable table can be built...
+//AFTER the page populates the data from the API.  Without using this strategy I have found the sorting features
+//to be broken.
+function winthegame() {
+  $(document).ready(function () {
+    $("#table_id").DataTable();
+  });
+}
+
 //This Function populates the Coin List page
 getCoinListSort = () => {
   axios
@@ -592,6 +598,9 @@ getCoinListSort = () => {
       });
 
       $("#superCoinPlace").html(output);
+      //Here I am calling the function to trigger the sorting of the data tables.  I put this here so that the sorting features would hit
+      //the page after the API calls have done their thing and the html is already built.
+      winthegame();
     });
 };
 
