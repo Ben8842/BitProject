@@ -4,12 +4,7 @@ getCoinList = () => {
     .get(
       `https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc`
     )
-
     .then((response) => {
-      //var x = 0;
-      //var y = 1;
-      //console.log(response.data);
-      // console.log(response.data.coins[0]);
       let output = "";
       let superCurrency = response.data.coins;
       var y = 0;
@@ -28,14 +23,6 @@ getCoinList = () => {
           </tr>
           `;
       });
-      /*let output = `
-        <tr>
-        <th scope="row">index</th>
-        <td>${response.data.coins[0].name}</td>
-        <td>${response.data.coins[0].price}</td>
-        <td>${response.data.coins[0].market_cap}</td>
-        </tr>
-          `;*/
       $("#superCoinPlace").html(output);
     });
   /*
