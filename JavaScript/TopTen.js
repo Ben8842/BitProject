@@ -3,30 +3,8 @@ const tenFunction = () => {
   $.getJSON(
     "https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc",
     function (tenlist) {
-      console.log(tenlist);
       var x = 0;
       var y = 1;
-      superinfo =
-        tenlist.coins[0].symbol +
-        "," +
-        tenlist.coins[1].symbol +
-        "," +
-        tenlist.coins[2].symbol +
-        "," +
-        tenlist.coins[3].symbol +
-        "," +
-        tenlist.coins[4].symbol +
-        "," +
-        tenlist.coins[5].symbol +
-        "," +
-        tenlist.coins[6].symbol +
-        "," +
-        tenlist.coins[7].symbol +
-        "," +
-        tenlist.coins[8].symbol +
-        "," +
-        tenlist.coins[9].symbol;
-      console.log(superinfo + "tenFunction");
       //this while loop creates the proper id with x and y variables and grabs the proper values from array
       //and pushes the info to the accordiangit
       while (x < 10) {
