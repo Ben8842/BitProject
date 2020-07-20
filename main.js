@@ -122,6 +122,3 @@ const myBit = () => {
     }
   );
 };
-
-//declaring global variable: this was built to gather a string to be used in another function, another function (detailsFUnction) that is not working yet
-var superinfo;
