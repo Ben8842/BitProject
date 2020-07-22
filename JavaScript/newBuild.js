@@ -13,6 +13,7 @@ function winthegame() {
 //This Function populates the Coin List page
 getCoinListSort = () => {
   axios
+
     .get(
       `https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc`
     )
@@ -21,12 +22,8 @@ getCoinListSort = () => {
       let output = "";
       let superCurrency = response.data.coins;
       var y = 0;
-      var sliderIndex = 0;
-      var submitIndex = 0;
       $.each(superCurrency, (index, coinBucket) => {
         y++;
-        sliderIndex++;
-        submitIndex++;
         var pricef = Math.floor(coinBucket.price * 100) / 100;
         var market_capf = Math.floor(coinBucket.market_cap * 100) / 100;
         var pricefc = pricef.toLocaleString();
@@ -35,25 +32,21 @@ getCoinListSort = () => {
         var volume_24hf = Math.floor(coinBucket.volume_24h * 100) / 100;
         var delta_24hfc = delta_24hf.toLocaleString();
         var volume_24hfc = volume_24hf.toLocaleString();
-        var slide = "slide" + sliderIndex;
+        var slide = "slide" + y;
         var slideMax = Math.floor(1000000 / coinBucket.price);
-        var outslide = "out" + submitIndex;
-        var submitid = "sid" + submitIndex;
+        var outslide = "out" + y;
+        var submitid = "sid" + y;
         var superPrice = "sup" + y;
 
         output += `
               <tr>
               <th scope="row">${y}</th>
               <td>${coinBucket.name}</td>
-              <td>${coinBucket.symbol}</td>
-              <td>$ ${pricefc}</td>
+              <td><input id="${slide}" type="range" min="0" max="${slideMax}" value="0" class="slider" size="0" onchange="showSlide(${y}, ${pricef})">             
               <td><p id="${outslide}"></p></td>
-              <td><p id="${superPrice}"></p><td>
-              <td><input id="${slide}" type="range" min="0" max="${slideMax}" value="0" class="slider" size="0" onchange="showSlide(${y}, ${pricef})">
-              <p id="${outslide}"></p>
-              <p id="${superPrice}"></p>
-              </td>
-              <td><input id ='${submitid}' type="submit" value="Submit"></td>
+              <td><p id="${superPrice}"></p></td>
+               <td>$ ${pricefc}</td>
+               <td>${coinBucket.symbol}</td>
               </tr>
               `;
       });
@@ -87,28 +80,13 @@ function showSlide(river, mountain) {
 
 //This function creates a doughnut chart based on the coinlist api top ten information
 const newBuild = () => {
+  var chartType = document.getElementById("chartType");
+  var userChoice = chartType.options[chartType.selectedIndex].value;
   $.getJSON(
     "https://coinlib.io/api/v1/coinlist?key=56a2275998bf3767&page=1&order=rank_asc",
     function (ranklist) {
       var superData = [];
       var superLabel = [];
-      var boater = 0;
-      var xindex = 0;
-      while (xindex < 100) {
-        boater++;
-        var sliding = "slide" + boater;
-        if (document.getElementById(sliding).value != 0) {
-          superData.push(
-            Math.floor(
-              ranklist.coins[xindex].price *
-                document.getElementById(sliding).value *
-                100
-            ) / 100
-          );
-          // superLabel.push(ranklist.coins[xindex].name);
-        }
-        xindex++;
-      }
       var y = 0;
       var t = 1;
       var toty = 0;
@@ -126,106 +104,49 @@ const newBuild = () => {
         }
         y++;
         t++;
-        console.log(toty);
+        //console.log(toty);
       }
+      //Here we are pushing the data values from each slider to the chart data array
+      //We are also calculating the percentage of the total from each slider and
+      //pushing this information along with the name to the label array of the chart
+      //in order to create the chart legend.
       var u = 0;
       var q = 1;
       while (u < 100) {
         var bliding = "slide" + q;
         if (document.getElementById(bliding).value != 0) {
-          console.log("HI" + document.getElementById(bliding).value);
-          console.log("hi" + ranklist.coins[u].price);
-          console.log("h" + toty);
           var per = Math.floor(
             ((document.getElementById(bliding).value *
               ranklist.coins[u].price) /
               toty) *
               100
           );
-          superLabel.push(ranklist.coins[u].name + " %" + per);
-          console.log(per);
+          superLabel.push(ranklist.coins[u].name + " % " + per);
+          superData.push(
+            Math.floor(
+              ranklist.coins[u].price *
+                document.getElementById(bliding).value *
+                100
+            ) / 100
+          );
+          //console.log(per);
         }
         u++;
         q++;
       }
-
+      //Here is where the chart is created based on the data and label arrays created above
       var ctx = document.getElementById("superChart").getContext("2d");
 
       var chart = new Chart(ctx, {
         // The type of chart we want to create
-        type: "doughnut",
+        type: userChoice,
         // The data for our dataset
         data: {
           labels: superLabel,
-          /*[
-            ranklist.coins[0].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[0].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            ranklist.coins[1].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[1].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            ranklist.coins[2].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[2].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            ranklist.coins[3].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[3].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            ranklist.coins[4].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[4].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            ranklist.coins[5].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[5].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            ranklist.coins[6].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[6].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            ranklist.coins[7].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[7].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            ranklist.coins[8].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[8].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            ranklist.coins[9].name +
-              " " +
-              Math.floor(
-                (parseInt(ranklist.coins[9].market_cap) / parseInt(tot)) * 100
-              ) +
-              "%",
-            "Rest of market" +
-              " " +
-              Math.floor((parseInt(rom) / parseInt(tot)) * 100) +
-              "%",
-          ],*/
+
           datasets: [
             {
-              label: "My First dataset",
+              label: "",
               backgroundColor: [
                 "rgb(255, 106, 0)",
                 "rgb(253, 250, 54)",
@@ -257,11 +178,13 @@ const newBuild = () => {
       var totP = superData.reduce(function (a, b) {
         return a + b;
       }, 0);
-      var totPD = totP.toFixed(2);
+      var totPD = Math.floor(totP * 100) / 100;
       var totPDc = totPD.toLocaleString();
-      console.log(totPD);
+      //console.log(totPD);
 
-      document.getElementById("totalPortfolio").innerHTML = totPDc;
+      document.getElementById("description").innerHTML =
+        "Your Total Portfolio Value";
+      document.getElementById("totalPortfolio").innerHTML = "$ " + totPDc;
     }
   );
 };

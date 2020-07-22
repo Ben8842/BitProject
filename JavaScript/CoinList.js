@@ -21,27 +21,43 @@ getCoinListSort = () => {
       let output = "";
       let superCurrency = response.data.coins;
       var y = 0;
+
       $.each(superCurrency, (index, coinBucket) => {
         y++;
         var pricef = Math.floor(coinBucket.price * 100) / 100;
         var market_capf = Math.floor(coinBucket.market_cap * 100) / 100;
         var pricefc = pricef.toLocaleString();
         var market_capfc = market_capf.toLocaleString();
+        var delta = parseInt(coinBucket.delta_24);
         var delta_24hf = Math.floor(coinBucket.delta_24h * 100) / 100;
         var volume_24hf = Math.floor(coinBucket.volume_24h * 100) / 100;
         var delta_24hfc = delta_24hf.toLocaleString();
         var volume_24hfc = volume_24hf.toLocaleString();
-        output += `
+        if (delta_24hfc.charAt(0) == "-") {
+          output += `
             <tr>
             <th scope="row">${y}</th>
             <td>${coinBucket.name}</td>
             <td>${coinBucket.symbol}</td>
             <td>$ ${pricefc}</td>
-            <td>% ${delta_24hfc}</td>
+            <td style="background-color:red; color: white" id="${y}">% ${delta_24hfc}</td>
             <td>$ ${market_capfc}</td>
             <td>$ ${volume_24hfc}</td>
             </tr>
             `;
+        } else {
+          output += `
+            <tr>
+            <th scope="row">${y}</th>
+            <td>${coinBucket.name}</td>
+            <td>${coinBucket.symbol}</td>
+            <td>$ ${pricefc}</td>
+            <td style="background-color: green; color: white" id="${y}">% ${delta_24hfc}</td>
+            <td>$ ${market_capfc}</td>
+            <td>$ ${volume_24hfc}</td>
+            </tr>
+            `;
+        }
       });
 
       $("#superCoinPlace").html(output);
