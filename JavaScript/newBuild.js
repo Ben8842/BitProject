@@ -38,15 +38,31 @@ getCoinListSort = () => {
         var submitid = "sid" + y;
         var superPrice = "sup" + y;
 
-        output += `
+        /*  output += `
               <tr>
               <th scope="row">${y}</th>
               <td>${coinBucket.name}</td>
-              <td><input id="${slide}" type="range" min="0" max="${slideMax}" value="0" class="slider" size="0" onchange="showSlide(${y}, ${pricef})">             
+              <td><input id="${slide}" type="range" min="0" max="${slideMax}" value="0" class="custom-range" size="0" onchange="showSlide(${y}, ${pricef})">             
               <td><p id="${outslide}"></p></td>
               <td><p id="${superPrice}"></p></td>
                <td>$ ${pricefc}</td>
                <td>${coinBucket.symbol}</td>
+              </tr>
+              `; */
+        output += `
+              <tr>
+              <th scope="row">${y}</th>
+            
+              <td class="slider">
+              <form name="NumberOfCoins" >
+              <input type="range" class="sliding" name="CoinName" id="${slide}" value="0" min="0" max="${slideMax}" oninput="${outslide}.value = ${slide}.value">
+              <output name="OutputName" id="${outslide}">0</output>
+              </form>
+              </td>
+
+                <td>${coinBucket.symbol}</td>
+               <td>$ ${pricefc}</td>
+               <td>${coinBucket.name}</td>
               </tr>
               `;
       });
@@ -158,6 +174,26 @@ const newBuild = () => {
                 "rgb(229, 132, 201)",
                 "rgb(23, 130, 12)",
                 "rgb(17, 132, 201)",
+                "rgb(255, 106, 0)",
+                "rgb(253, 250, 54)",
+                "rgb(40, 165, 230)",
+                "rgb(40, 250, 54)",
+                "rgb(189, 165, 150)",
+                "rgb(23, 250, 244)",
+                "rgb(248, 2, 12)",
+                "rgb(229, 132, 201)",
+                "rgb(23, 130, 12)",
+                "rgb(17, 132, 201)",
+                "rgb(255, 106, 0)",
+                "rgb(253, 250, 54)",
+                "rgb(40, 165, 230)",
+                "rgb(40, 250, 54)",
+                "rgb(189, 165, 150)",
+                "rgb(23, 250, 244)",
+                "rgb(248, 2, 12)",
+                "rgb(229, 132, 201)",
+                "rgb(23, 130, 12)",
+                "rgb(17, 132, 201)",
               ],
               borderColor: "rgb(25, 99, 132)",
 
@@ -168,6 +204,8 @@ const newBuild = () => {
 
         // Configuration options go here
         options: {
+          responsive: true,
+          maintainAspectRatio: false,
           legend: {
             position: "left",
           },

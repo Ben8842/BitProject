@@ -32,8 +32,16 @@
       <h1 class="display-5">Build Portfolio</h1>
       <p style="text-align: center;" id="description"></p>
       <h1 style="text-align: center;" id="totalPortfolio"></h1>
+      <p> Use the sliders to build your portfolio.  Pick your chart type and click submit.  Analyze your portfolio and reset to build another one.  </p>
 
-      <canvas id="superChart"></canvas>
+      
+     
+     
+      <div class="table-responsive">
+        <canvas id="superChart"  style="height:400px"  class="table"></canvas>
+      </div>
+
+
     </div>
     <p style="text-align: center;" id="description"></p>
     <h3 style="text-align: center;" id="totalPortfolio"></h3>
@@ -53,7 +61,7 @@
     </div>
     <p id="test"></p>
  <!--Dropdown for choosing chart type-->
- <div class="container-fluid p-5">
+ <div class="container-fluid p-2">
   <div class="results-container">
     <div class="form-group">
       <label for="Choosing">Choose Chart Type</label>
@@ -73,13 +81,13 @@
       <table id="table_id" class="table table-hover">
         <thead>
           <tr>
-            <th>#</th>
-            <th scope="col">Coin Name</th>
+            <th>#</th>          
             <th scope="col">Slider Input</th>
-            <th scope="col">Slider Value</th>
-            <th scope="col">Total value (*current prices)</th>
-            <th scope="col">Current Price</th>
             <th scope="col">Ticker</th>
+ 
+       
+            <th scope="col">Current Price</th>
+            <th scope="col">Coin Name</th>
           </tr>
         </thead>
 
