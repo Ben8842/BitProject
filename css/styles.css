@@ -36,3 +36,12 @@
 #carousel {
   background-color: lightblue;
 }
+
+td.slider {
+  text-align: left;
+  background-color: yellow;
+}
+
+.sliding {
+  width: 75%;
+}
