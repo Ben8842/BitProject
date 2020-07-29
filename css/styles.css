@@ -45,3 +45,7 @@ td.slider {
 .sliding {
   width: 75%;
 }
+
+#wbutton {
+  border: 1px solid white;
+}
