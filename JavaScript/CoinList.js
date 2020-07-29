@@ -4,7 +4,9 @@
 //to be broken.
 function winthegame() {
   $(document).ready(function () {
-    $("#table_id").DataTable();
+    $("#table_id").DataTable({
+      pageLength: 100,
+    });
   });
 }
 
