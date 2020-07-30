@@ -32,13 +32,12 @@ getCoinListSort = () => {
               <td><img src="${
                 exBucket.image
               }" alt="help" style="width:50px;height:50px;"></td>
-              <td>${exBucket.name}</td> 
-               <td>$ ${volume.toLocaleString()}</td>
-
+              <td><a href="${exBucket.url}">${exBucket.name}</a></td> 
               <td>${exBucket.trust_score}</td>
               <td>${exBucket.country}</td>
-              <td>${exBucket.year_established}</td>
-              <td><a href="${exBucket.url}">${exBucket.url}</a></td>
+              <td>${exBucket.year_established}</td> 
+              <td>$ ${volume.toLocaleString()}</td>
+              <td></td>
             
               </tr>
               `;
