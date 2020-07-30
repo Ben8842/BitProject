@@ -36,6 +36,7 @@ getCoinListSort = () => {
     )
 
     .then((response) => {
+      console.log(response);
       let output = "";
       let superCurrency = response.data;
       var y = 0;
@@ -48,7 +49,8 @@ getCoinListSort = () => {
         var pricefc = pricef.toLocaleString();
         var market_capfc = market_capf.toLocaleString();
         var delta = parseInt(coinBucket.price_change_percentage_24h);
-        var delta_24hf = Math.floor(coinBucket.price_change_24h * 100) / 100;
+        var delta_24hf =
+          Math.floor(coinBucket.price_change_percentage_24h * 100) / 100;
         var volume_24hf = Math.floor(coinBucket.total_volume * 100) / 100;
         var delta_24hfc = delta_24hf.toLocaleString();
         var volume_24hfc = volume_24hf.toLocaleString();
@@ -58,7 +60,7 @@ getCoinListSort = () => {
               <tr>
               <th scope="row">${y}    </th>
              
-              <td>  <button class="button"  id="wbutton" onclick="coinSelected(${x})"><img src="${coinBucket.image}" alt="help" style="width:20px;height:20px;">     ${coinBucket.name}</button></td>
+              <td>  <button class="button"  id="wbutton" onclick="coinSelected(${x})"><img src="${coinBucket.image}" alt="help" style="width:40px;height:40px;">     ${coinBucket.name}</button></td>
               <td>${coinBucket.symbol}</td>
               <td>$ ${pricefc}</td>
               <td style="background-color:red; color: white" id="${x}">% ${delta_24hfc}</td>
@@ -70,7 +72,7 @@ getCoinListSort = () => {
           output += `
               <tr>
               <th scope="row">${y}   </th>
-              <td>  <button class="button" id="wbutton" onClick="coinSelected(${x})"> <img src="${coinBucket.image}" alt="help" style="width:20px;height:20px;">      ${coinBucket.name}</button></td>
+              <td>  <button class="button" id="wbutton" onClick="coinSelected(${x})"> <img src="${coinBucket.image}" alt="help" style="width:40px;height:40px;">      ${coinBucket.name}</button></td>
               <td>${coinBucket.symbol}</td>
               <td>$ ${pricefc}</td>
               <td style="background-color: green; color: white" id="${y}">% ${delta_24hfc}</td>
@@ -100,7 +102,7 @@ createLearn = () => {
       console.log(response);
 
       let output = `
-          <div class="row">
+          <div class="row p-5">
           <div class="col-md-4">
           <img src="${response.data.image.large}" class="thumbnail">
        </div>
