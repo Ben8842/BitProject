@@ -13,7 +13,7 @@ coinSelected = (id) => {
       //console.log(listy[id].name);
       var idNEW = listy[id].id;
       sessionStorage.setItem("coinName", idNEW);
-      window.location = "newLearn.html";
+      window.location = "NewLearn.html";
       return false;
     }
   );
