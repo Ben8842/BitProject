@@ -10,7 +10,6 @@ coinSelected = (id) => {
   $.getJSON(
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false",
     function (listy) {
-      //console.log(listy[id].name);
       var idNEW = listy[id].id;
       sessionStorage.setItem("coinName", idNEW);
       window.location = "NewLearn.html";
@@ -36,7 +35,7 @@ getCoinListSort = () => {
     )
 
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       let output = "";
       let superCurrency = response.data;
       var y = 0;
@@ -93,16 +92,17 @@ getCoinListSort = () => {
 
 createLearn = () => {
   let coinyId = sessionStorage.getItem("coinName");
-  console.log(coinyId);
 
   axios
     .get(`https://api.coingecko.com/api/v3/coins/${coinyId}`)
     .then((response) => {
+      //console.log(response);
       let education = response.data.description.en;
-      console.log(response);
-
+      document.getElementById("priceNow").innerHTML =
+        "Current price is $" +
+        response.data.market_data.current_price.usd.toLocaleString();
       let output = `
-          <div class="row p-5">
+          <div class="row p-2">
           <div class="col-md-4">
           <img src="${response.data.image.large}" class="thumbnail">
        </div>
@@ -126,7 +126,6 @@ createLearn = () => {
 
 create2Learn = () => {
   let coinyId = sessionStorage.getItem("coinName");
-  console.log(coinyId);
 
   var timeRange = document.getElementById("chartType");
 
@@ -135,7 +134,7 @@ create2Learn = () => {
       coinyId +
       "/market_chart?vs_currency=usd&days=1",
     function (chartData) {
-      console.log(chartData.prices[0][1]);
+      // console.log(chartData.prices[0][1]);
       var realnums = [];
       var realdates = [];
       for (x = 0; x < chartData.prices.length; x++) {
@@ -179,7 +178,6 @@ create2Learn = () => {
 
 create3Learn = () => {
   let coinyId = sessionStorage.getItem("coinName");
-  console.log(coinyId);
 
   var e = document.getElementById("chartType");
 
@@ -187,6 +185,15 @@ create3Learn = () => {
   var actualTime = "";
   if (timeRange == "24 Hour Chart") {
     actualTime = "1";
+  }
+  if (timeRange == "7 Day Chart") {
+    actualTime = "7";
+  }
+  if (timeRange == "14 Day Chart") {
+    actualTime = "14";
+  }
+  if (timeRange == "30 Day Chart") {
+    actualTime = "30";
   }
   if (timeRange == "100 Day Chart") {
     actualTime = "100";
@@ -200,7 +207,7 @@ create3Learn = () => {
   if (timeRange == "Max Day Chart") {
     actualTime = "max";
   }
-  console.log(timeRange);
+
   console.log(actualTime);
   $("#superChart").remove();
   $("#super2Chart").remove();
@@ -217,7 +224,7 @@ create3Learn = () => {
       '"',
 
     function (chartData) {
-      console.log(chartData.prices[0][1]);
+      //console.log(chartData.prices[0][1]);
       var realnums = [];
       var realdates = [];
       for (x = 0; x < chartData.prices.length; x++) {

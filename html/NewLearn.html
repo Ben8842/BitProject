@@ -31,6 +31,7 @@
     <div class="container-fluid p-5">
       <h1 class="display-3">Price Chart</h1>
     </div>
+   
   
     <div class="container-fluid p-4">
       <div class="results-container">
@@ -38,6 +39,9 @@
           <label for="Choosing">Choose Chart Type</label>
           <select class="form-control" id="chartType" onChange="create3Learn()">
             <option>24 Hour Chart</option>
+            <option>7 Day Chart</option>
+            <option>14 Day Chart</option>
+            <option>30 Day Chart</option>
             <option>100 Day Chart</option>
             <option>250 Day Chart</option>
             <option>1000 Day Chart</option>
@@ -45,15 +49,18 @@
         </div>
       </div>
 
-      <div class="table-responsive p-4" id="HereItIs">
+      <div class="table-responsive p-2" id="HereItIs">
         <canvas id="superChart" style="height: 400px;" class="table"></canvas>
       </div>
 
-          <div class="container-fluid p-5">
+          <div class="container-fluid p-2">
    <button type="button" class="btn btn-success btn-sm" onclick="createLearn()">
           More Information
         </button> 
-        <div id="superCoinLearn" class="p-5"></div>
+        <hr>
+        <hr>
+        <h3 id="priceNow"></h3>
+        <div id="superCoinLearn" class="p-2"></div>
       <script>
         create2Learn();
       </script>
