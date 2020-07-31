@@ -123,3 +123,139 @@ createLearn = () => {
       console.log(error);
     });
 };
+
+create2Learn = () => {
+  let coinyId = sessionStorage.getItem("coinName");
+  console.log(coinyId);
+
+  var timeRange = document.getElementById("chartType");
+
+  $.getJSON(
+    "https://api.coingecko.com/api/v3/coins/" +
+      coinyId +
+      "/market_chart?vs_currency=usd&days=1",
+    function (chartData) {
+      console.log(chartData.prices[0][1]);
+      var realnums = [];
+      var realdates = [];
+      for (x = 0; x < chartData.prices.length; x++) {
+        realnums.push(chartData.prices[x][1]);
+        const unixtime = chartData.prices[x][0];
+        const dateObject = new Date(unixtime);
+        const humanDateFormat = dateObject.toLocaleString();
+        realdates.push(humanDateFormat);
+      }
+
+      var ctx = document.getElementById("superChart").getContext("2d");
+      var myLineChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: realdates,
+          datasets: [
+            {
+              label: "Price in USD of " + coinyId + " for the past 100 days",
+              data: realnums,
+              backgroundColor: ["rgba(0, 128, 0, 0.2)"],
+              borderColor: ["rgba(0, 255, 0, 1)"],
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: false,
+                },
+              },
+            ],
+          },
+        },
+      });
+    }
+  );
+};
+
+create3Learn = () => {
+  let coinyId = sessionStorage.getItem("coinName");
+  console.log(coinyId);
+
+  var e = document.getElementById("chartType");
+
+  var timeRange = e.options[e.selectedIndex].text;
+  var actualTime = "";
+  if (timeRange == "24 Hour Chart") {
+    actualTime = "1";
+  }
+  if (timeRange == "100 Day Chart") {
+    actualTime = "100";
+  }
+  if (timeRange == "250 Day Chart") {
+    actualTime = "250";
+  }
+  if (timeRange == "1000 Day Chart") {
+    actualTime = "1000";
+  }
+  if (timeRange == "Max Day Chart") {
+    actualTime = "max";
+  }
+  console.log(timeRange);
+  console.log(actualTime);
+  $("#superChart").remove();
+  $("#super2Chart").remove();
+  $("iframe.chartjs-hidden-iframe").remove();
+  $("#HereItIs").append(
+    '<canvas id="super2Chart" style="height: 400px;" class="table">><canvas>'
+  );
+
+  $.getJSON(
+    "https://api.coingecko.com/api/v3/coins/" +
+      coinyId +
+      "/market_chart?vs_currency=usd&days=" +
+      actualTime +
+      '"',
+
+    function (chartData) {
+      console.log(chartData.prices[0][1]);
+      var realnums = [];
+      var realdates = [];
+      for (x = 0; x < chartData.prices.length; x++) {
+        realnums.push(chartData.prices[x][1]);
+        const unixtime = chartData.prices[x][0];
+        const dateObject = new Date(unixtime);
+        const humanDateFormat = dateObject.toLocaleString();
+        realdates.push(humanDateFormat);
+      }
+      console.log(actualTime);
+      var ctx = document.getElementById("super2Chart").getContext("2d");
+
+      var myLineChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: realdates,
+          datasets: [
+            {
+              label: "Price in USD of " + coinyId + " for the past 100 days",
+              data: realnums,
+              backgroundColor: ["rgba(0, 128, 0, 0.2)"],
+              borderColor: ["rgba(0, 255, 0, 1)"],
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: false,
+                },
+              },
+            ],
+          },
+        },
+      });
+    }
+  );
+};

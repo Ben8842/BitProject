@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
 
-    <title>Coin Education</title>
+    <title>Charts and Education</title>
     <!-- this links to chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!-- this links to jquery-->
@@ -29,12 +29,33 @@
   </head>
   <body>
     <div class="container-fluid p-5">
-      <h1 class="display-3">Coin Education</h1>
+      <h1 class="display-3">Price Chart</h1>
     </div>
-    <div id="superCoinLearn"></div>
   
+    <div class="container-fluid p-4">
+      <div class="results-container">
+        <div class="form-group">
+          <label for="Choosing">Choose Chart Type</label>
+          <select class="form-control" id="chartType" onChange="create3Learn()">
+            <option>24 Hour Chart</option>
+            <option>100 Day Chart</option>
+            <option>250 Day Chart</option>
+            <option>1000 Day Chart</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-responsive p-4" id="HereItIs">
+        <canvas id="superChart" style="height: 400px;" class="table"></canvas>
+      </div>
+
+          <div class="container-fluid p-5">
+   <button type="button" class="btn btn-success btn-sm" onclick="createLearn()">
+          More Information
+        </button> 
+        <div id="superCoinLearn" class="p-5"></div>
       <script>
-        createLearn();
+        create2Learn();
       </script>
     </div>
     <script
