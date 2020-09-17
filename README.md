@@ -1,17 +1,9 @@
-For educational puposes I am looking to use the coinlib.io api to display things in interesting ways.  
+For educational puposes I am looking to use the various API's to build a website
 
-This project also uses the chart.js to help generate charts.  
-This project also uses https://min-api.cryptocompare.com/ for pulling the latest news information
-
-
-    "Powered by Coinlib API"
-    https://coinlib.io/apidocs
-
-
-    
-120 requests/hour to /global
-60 requests/hour to /coinlist
-180 requests/hour to /coin
-
+This project uses the chart.js to help generate charts.  
+This project uses https://min-api.cryptocompare.com/ for pulling the latest news information and price data and more
+This project uses https://coinlib.io/apidocs for price data and more
+This project uses https://www.coingecko.com/api for price data and more
+This project uses Cool Text: Free Graphics Generator @ https://cooltext.com/
 
 
