@@ -11,7 +11,7 @@ function winthegame() {
 }
 
 //This Function populates the Coin List page
-getCoinListSort = () => {
+getExchangeListSort = () => {
   axios
     .get(`https://api.coingecko.com/api/v3/exchanges`)
 
@@ -31,19 +31,20 @@ getCoinListSort = () => {
               <th scope="row">${y}</th>
               <td><img src="${
                 exBucket.image
-              }" alt="help" style="width:50px;height:50px;"></td>
-              <td><a href="${exBucket.url}">${exBucket.name}</a></td> 
+              }" alt="help" style="width:50px;height:50px;"><a href="${
+          exBucket.url
+        }">${exBucket.name}</a> </td> 
               <td>${exBucket.trust_score}</td>
               <td>${exBucket.country}</td>
               <td>${exBucket.year_established}</td> 
               <td>$ ${volume.toLocaleString()}</td>
-              <td></td>
+              
             
               </tr>
               `;
       });
 
-      $("#superCoinPlace").html(output);
+      $("#superExchangePlace").html(output);
       //Here I am calling the function to trigger the sorting of the data tables.  I put this here so that the sorting features would hit
       //the page after the API calls have done their thing and the html is already built.
       winthegame();
