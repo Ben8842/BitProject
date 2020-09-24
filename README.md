@@ -11,5 +11,3 @@ This project uses https://www.coingecko.com/api for price data and more
 This project uses Cool Text: Free Graphics Generator @ https://cooltext.com/
 
 This project uses data tables @ https://datatables.net/
-
-This project uses data tables @ https://datatables.net/
